@@ -1,0 +1,126 @@
+body{
+    background-color: #FFEBEE;
+}
+#navbar{
+width: 100%;
+margin: auto;
+display: flex;
+justify-content: space-around;
+background-color: white;
+font-size: 14px;
+height: 44px;
+align-items: center;
+opacity: 0.8;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+#navbar>img{
+width: 70px;
+}
+#navbar a{
+color: black;
+}
+#navbar>a:hover{
+color: lightgreen;
+opacity: 1;
+}
+#navbar>a>img{
+width: 45px;
+background: transparent;
+}
+form {
+width: 50%;
+border: 1px solid rgb(230, 230, 230);
+margin: 3% auto;
+/* padding: 3%; */
+background: #FCE4EC;
+font-size: 20px;
+height: 700px;
+padding-left: 15px;
+padding-right: 15px;
+}
+form>input {
+display: block;
+margin: 15px 0px;
+font-size: 20px;
+padding: 2%;
+border-radius: 20px;
+font-style: italic;  
+text-align: center;
+background-color: white;
+color: black;
+}
+#main{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0099FF;
+    margin: 3% auto;
+    padding: 3%;
+    border: 1px solid rgb(230, 230, 230);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#main>.add{
+    background-color: white;
+    width: 50%;
+    text-align: center;
+    align-items:center;
+    align-content: center;
+    /* padding-top: 200px; */
+    height: 700px;
+}
+img{
+    width: 50%;
+}
+h2{
+    font-size: 40px;
+}
+h5{
+    font-size: 30px;
+}
+button {
+display: block;
+margin: 15px 0px;
+font-size: 20px;
+padding: 2%;
+border-radius: 20px;
+font-style: italic;  
+text-align: center ;
+text-decoration: none;
+color: white;
+background-color: black;
+}
+#ascach{
+    background-color: aqua;
+    width: 90%;
+    margin: auto;
+    padding: 50px;
+}
+a{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    
+}
+a img{
+    width: 25px;
+}
+span{
+    color: #0099FF;
+    text-decoration: underline;
+    font-size: 25px;
+}
+
+@media only screen and (max-width:800px) {
+    #main{
+        flex-direction: column;
+    }
+    #main>.add{
+        width: 100%;
+    }
+    #main>form{
+        width: 92%;
+    }
+}

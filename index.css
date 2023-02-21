@@ -1,0 +1,291 @@
+html {
+-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%
+}
+body{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+    font-family: Inter;
+}
+*{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+/* navbar and offer link onword */
+#navbar{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 14px;
+    height: 44px;
+    align-items: center;
+    opacity: 0.8;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+/* #navbar>div>a{
+    width: 100%;
+    justify-content: space-between;
+    font-size: 20px;
+} */
+#navbar>img{
+    width: 70px;
+}
+#navbar a{
+    color: #eeecec;
+}
+#navbar>a:hover{
+    color: lightgreen;
+    opacity: 1;
+}
+#navbar>a>img{
+    width: 45px;
+    background: transparent;
+}
+#add{
+    text-align: center;
+    font-size: 20px;
+    /* margin: 20px; */
+    /* color: white; */
+    background-color: white;
+    /* height: 50px; */
+    padding: 15px;
+    /* margin: 0px; */
+    /* margin-bottom: 0px; */
+}
+#add:hover{
+    color: red;
+}
+#add>a:hover{
+    color: lightskyblue
+}
+/* iphone 14 Pro onword */
+#pro_14{
+    padding-top: 20px;
+    background-color: #0B0A0A;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+#pro_14>div>button{
+    font-size: 30px;
+    border: none;
+    background: transparent;
+    color: white;
+    outline-style: double;
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+#pro_14>div>div>a{
+    color: lightskyblue;
+    padding: 20px;
+}
+#pro_14>div>a>img{
+    width: 45%;
+    height: 40%;
+    margin-top: 20px;
+}
+/* iphone 14 onword */
+#iphone_14{
+    padding-top: 20px;
+    background-color: white;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    color: black;
+    font-size: 30px;
+    border-radius: 16px;
+    padding: 5px 10px;
+}
+#iphone_14>div>button{
+    font-size: 30px;
+    border: none;
+    background: transparent;
+    color: black;
+    outline-style: double;
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+    /* overflow: visible */
+}
+#iphone_14>div>div>a{
+    color: lightskyblue;
+    padding: 20px;
+}
+#iphone_14>div>.iphone_14>a>img{
+    width: 45%;
+    height: 100%;
+    margin-top: 20px;
+}
+#iphone_14>div>.iphone_14{
+    width: 45%;
+    height: 40%;
+    margin-top: 20px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    }
+    /* //form Apple.com */
+button {
+background: none;
+border: 0;
+box-sizing: content-box;
+color: inherit;
+cursor: pointer;
+font: inherit;
+line-height: inherit;
+overflow: visible;
+vertical-align: inherit
+}
+/* //Unity_watch Section */
+#unity_watch{
+    box-sizing: border-box;
+    padding-top: 20px;
+    background-color: #0B0A0A;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    ;
+}
+#unity_watch>div>h3>img{
+    width: 2%;
+    margin-bottom: 0px;
+}
+#unity_watch>div>a>img{
+    width: 100%;
+    margin: auto;
+}
+#unity_watch>div>p{
+    width: 33%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+#unity_watch>div>div>a{
+    color: lightskyblue;
+    padding: 20px;
+}
+/* //grid of product */
+#product_grid{
+    /* padding-top: 20px; */
+    /* background-color: #0B0A0A; */
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px 20px;
+}
+/* Wacth */
+#product_grid>.watch{
+    margin-top: 30px;
+    background-color: #0B0A0A;
+    color: white;
+    text-align: center;
+}
+#product_grid>div>div>a{
+    color: lightskyblue;
+    padding: 20px;
+}
+#product_grid>.watch>div>img{
+    width: 40%;
+    margin: auto;
+    margin-top: 30px;
+}
+/* iPad */
+#product_grid>.iPad{
+    margin-top: 30px;
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+#product_grid>.iPad>div>img{
+    width: 40%;
+    margin: auto;
+    margin-top: 30px;
+}
+/* MacBook */
+#product_grid>.MacBook{
+    background-color: #0B0A0A;
+    color: white;
+    text-align: center;
+}
+#product_grid>div>div>a{
+    color: lightskyblue;
+    padding: 20px;
+}
+#product_grid>.MacBook>div>img{
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+}
+/* Homepod  */
+#product_grid>.HomePod{
+    /* margin-top: 30px; */
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+#product_grid>.HomePod>div>img{
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+}
+/* MacStore */
+#product_grid>.MacStore{
+    /* margin-top: 30px; */
+    background-color: #FAFAFA;
+    color: black;
+    text-align: center;
+}
+#product_grid>.MacStore>div>img{
+    width: 60%;
+    margin: auto;
+    margin-top: 30px;
+}
+#sliding{
+    width: 90%;
+    margin: auto;
+    margin: auto;
+    margin-bottom: 50px;
+}
+#sliding>div>.Stream_button{
+    font-size: 30px;
+    border: #0B0A0A;
+    outline-style: double;
+    border-radius: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+#last{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 40px;
+}
+#grid{
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+@media only screen and (max-width:650px){
+    #product_grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #navbar{
+        display: none;
+    }
+}
