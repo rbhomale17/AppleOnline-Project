@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppleOnline.com/SignUp</title>
+    <link rel="stylesheet" href="Signup.css">
+</head>
+<body>
+<div id="ascach">
+    <div id="main">
+        <div class="add">
+            <h2>Welcome to AppleOnline.com</h2>
+            <h5>This is Online Electronics Retailer store.</h5>
+            <img src="./Images/Logos/Black.png" alt="">
+            <div>
+                <a href="./login.html"><h3>Click here for <span>Log in<img src="./Images/Logos/Black.png" alt=""></span></h3></a>
+                <a href="./Signup.html"><h3>Click here for <span>Create New Account <img src="./Images/Logos/Black.png" alt=""></span></h3></a>
+            </div>
+        </div>
+        <form id="form">
+            <h2>Reset password here.</h2>
+            <input type="text" required placeholder="Enter Mobile or Enter Email" name="registeredUser" id="mobile||email">
+            <input id="submit" name="submit" value="Submit" type="submit">
+            <img src="https://i.pinimg.com/originals/ba/9f/d1/ba9fd18b416ed2b9207fda4b8a09e5d1.png" alt="">
+        </form>
+    </div>
+</div>
+</body>
+<script>
+    let registeredUser=document.getElementById("mobile||email");
+    let form=document.querySelector("form");
+
+    let myUserData=JSON.parse(localStorage.getItem("Sign-up-Data"))||[];
+
+    form.addEventListener("submit",function(event){
+        event.preventDefault();
+        let formdata={
+            registeredUser:registeredUser.value,
+        }
+            
+            var bag1=forgotpass(formdata)
+            alert(`Your Password is ${bag1}`)
+            console.log(bag1);
+    });
+    
+    
+
+    function forgotpass(data){
+        let bag="";
+        for(let i=0; i<myUserData.length; i++)
+        {
+            // console.log(data.registeredUser,myUserData[i].email,data.password,myUserData[i].password);
+            if(data.registeredUser==myUserData[i].email)
+            {
+                return bag=myUserData[i].password;
+                // console.log(bag);
+            }
+            // return bag;
+        }
+    }
+    // function password(){
+    //     for(let i=0; i<myUserData.length; i++)
+    //     {
+    //         if()
+    //     }
+    // }
+    function redirect(){
+        location.href="./index.html"
+    }
+</script>
+</html>

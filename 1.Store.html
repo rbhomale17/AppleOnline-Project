@@ -21,7 +21,7 @@
         <a href="./9.Accessories.html">Accessories</a>
         <a href="./10.Support.html">Support</a>
         <input type="text" placeholder="Search">
-        <a style="font-size: 20px;" href="./other_files/0.Bag.html">Cart / Bag:-</a>
+        <a style="font-size: 20px;" href="./cart.html">Cart / Bag:-</a>
         <h2 id="cart-count">0</h2>
         <a href="./Signup.html">Log in / Sign up</a>
     </div>
@@ -275,37 +275,37 @@ let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
             id:1,
             image:"./Images/store/accs.2.jpg",
             title:"45mm Black Unity Sport Loop",
-            price:"$ 49"
+            price:`${49}`
         },
         {
             id:2,
             image:"./Images/store/assc.3.jpg",
             title:"iPhone 14 Pro Clear Case with MagSafe",
-            price:"$ 49"
+            price:`${49}`
         },      
         {
             id:3,
             image:"./Images/store/assc.4.jpg",
             title:"iPhone 14 Silicone Case with MagSafe - Lilac",
-            price:"$ 49"
+            price:`${49}`
         },        
         {
             id:4,
             image:"./Images/store/assc.5.jpg",
             title:"Smart Folio for iPad (10th generation) - Lemonade",
-            price:"$ 79"
+            price:`${79}`
         },
         {
             id:5,
             image:"./Images/store/assc.6.jpg",
             title:"iPhone 14 Pro Leather Case with MagSafe - Ink",
-            price:"$ 59"
+            price:`${59}`
         },
         {
             id:6,
             image:"./Images/store/assc.7.jpg",
             title:"iPhone Leather Wallet with MagSafe - Umber",
-            price:"$ 59"
+            price:`${59}`
         }
     ];
     let musicArray=[
@@ -313,37 +313,37 @@ let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
             id:1,
             image:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-select-midnight-202210?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1670557210097",
             title:"HomePod - Midnight",
-            price:"$ 299"
+            price:`${299}`
         },
         {
             id:2,
             image:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQD83?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1660803972361",
             title:"AirPods Pro (2nd generation)",
-            price:"$ 249"
+            price:`${249}`
         },
         {
             id:3,
             image:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-yellow-202110?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1632925510000",
             title:"HomePod mini - Yellow",
-            price:"$ 99"
+            price:`${99}`
         },
         {
             id:4,
             image:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-max-select-silver-202011?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1604021221000",
             title:"AirPods Max - Silver",
-            price:"$ 299"
+            price:`${299}`
         },
         {
             id:5,
             image:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MME73?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1632861342000",
             title:"AirPods (3rd generation) with Lightning Charging Case",
-            price:"$ 299"
+            price:`${299}`
         },
         {
             id:6,
             image:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MJ4X3?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1621876626000",
             title:"Beats Studio Buds – True Wireless Noise Cancelling Earphones – Black",
-            price:"$ 299"
+            price:`${299}`
         }
     ]
     display(acceArray) //7 items present
@@ -357,7 +357,7 @@ let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
             let title=document.createElement("h3");
             title.innerText=data[i].title;
             let price=document.createElement("p");
-            price.innerText=data[i].price;
+            price.innerText=`$ ${data[i].price}`;
             let button=document.createElement("button");
             button.textContent="Add to cart"
             button.addEventListener("click",function(){
@@ -366,7 +366,7 @@ let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
                     alert("Product is Already in your Cart")
                 }else{
                 alert(data[i].title+" is added to your cart.")
-                cart.push({...data[i],quntity:1});
+                cart.push({...data[i],quantity:1});
                 button.textContent="Already in Cart"
 
                 localStorage.setItem("Add-to-cart",JSON.stringify(cart));
@@ -380,7 +380,7 @@ let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
     function checkRepeat(data){
         for(let i=0; i<cart.length; i++)
         {
-            if(data.id==cart[i].id)
+            if(data.title==cart[i].title)
             {
                 return true;
             }
@@ -397,7 +397,7 @@ let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
             let title=document.createElement("h3");
             title.innerText=data[i].title;
             let price=document.createElement("p");
-            price.innerText=data[i].price;
+            price.innerText=`$ ${data[i].price}`;
             let button=document.createElement("button");
             button.textContent="Add to cart"
             button.addEventListener("click",function(){
@@ -406,12 +406,11 @@ let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
                     alert("Product is Already in your Cart")
                 }else{
                 alert(data[i].title+" is added to your cart.")
-                cart.push(data[i]);
+                cart.push({...data[i],quantity:1});
                 button.textContent="Already in Cart"
-
                 localStorage.setItem("Add-to-cart",JSON.stringify(cart));
                 }
-            })
+            });
 
             card.append(image,title,price,button);
             music.append(card);
@@ -420,7 +419,7 @@ let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
     function checkRepeat(data){
         for(let i=0; i<cart.length; i++)
         {
-            if(data.id==cart[i].id)
+            if(data.title==cart[i].title)
             {
                 return true;
             }
