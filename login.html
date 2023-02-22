@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppleOnline.com/SignUp</title>
+    <link rel="stylesheet" href="Signup.css">
+</head>
+<body>
+    <div id="navbar">
+        <a href="./Index.html"><img src="./Images/1.NavBar/Apple-Logo.png"  alt="" ></a>
+        <a href="./1.Store.html">Store</a>
+        <a href="./2.Mac.html">Mac</a>
+        <a href="./3.iPad.html">iPad</a>
+        <a href="./4.iPhone.html">iPhone</a>
+        <a href="./5.Watch.html">Watch</a>
+        <a href="./6.AirPods.html">AirPods</a>
+        <a href="./7.TV_&_Home.html">TV & Home</a>
+        <a href="./8.Entertainment.html">Entertainment</a>
+        <a href="./9.Accessories.html">Accessories</a>
+        <a href="./10.Support.html">Support</a>
+        <input type="text" placeholder="Search">
+        <a style="font-size: 20px;" href="./other_files/0.Bag.html">Cart / Bag:-</a>
+        <h2 id="cart-count">0</h2>
+        <a href="./Signup.html">Log in / Sign up</a>
+    </div>
+<div id="ascach">
+    <div id="main">
+        <div class="add">
+            <h2>Welcome to AppleOnline.com</h2>
+            <h5>This is Online Electronics Retailer store.</h5>
+            <img src="./Images/Logos/Black.png" alt="">
+            <div>
+                <a href="./forgotpass.html"><h3>Forgot Password ?</h3></a>
+                <a href="./Signup.html"><h3>Click here for <span>Create New Account <img src="./Images/Logos/Black.png" alt=""></span></h3></a>
+            </div>
+        </div>
+        <form id="form">
+            <h2>Log in to AppleOnline form Here.</h2>
+            <input type="text" required placeholder="Enter Mobile or Enter Email" id="mobile||email">
+            <input type="password" required placeholder="Enter Password" name="password" id="password">
+            <input id="submit" name="submit" value="Submit" type="submit">
+            <img src="https://i.pinimg.com/originals/ba/9f/d1/ba9fd18b416ed2b9207fda4b8a09e5d1.png" alt="">
+        </form>
+    </div>
+</div>
+</body>
+<script>
+    let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
+    let cart_count=document.getElementById("cart-count");
+    cart_count.innerText=cart.length;
+
+    let registeredUser=document.getElementById("mobile||email");
+    let password=document.getElementById("password");
+    let form=document.querySelector("form");
+
+    let myUserData=JSON.parse(localStorage.getItem("Sign-up-Data"))||[];
+    form.addEventListener("submit",function(event){
+        event.preventDefault();
+        let formdata={
+            registeredUser:registeredUser.value,
+            password:password.value,
+        };
+        if(checkemailPass(formdata))
+        {
+            alert("Log in Successful")
+            alert("Redirecting to APP.",onclick=redirect());
+        }else{
+            alert("Wrong Mobile/Email or Password.")
+        };
+    });
+    function checkemailPass(data){
+        for(let i=0; i<myUserData.length; i++)
+        {
+            if(data.registeredUser==myUserData[i].email&&data.password==myUserData[i].password)
+            {
+                return true;
+                break;
+            }
+            // console.log(data.registeredUser,myUserData[i].mobile,data.password,myUserData[i].password);
+        }
+    }
+    function redirect(){
+        location.href="./index.html"
+    }
+</script>
+</html>

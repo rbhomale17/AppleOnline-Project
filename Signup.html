@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AppleOnline.com/SignUp</title>
-    <link rel="stylesheet" href="Signup.css">;
+    <link rel="stylesheet" href="Signup.css">
 </head>
 <body>
     <div id="navbar">
@@ -21,7 +21,7 @@
         <a href="./9.Accessories.html">Accessories</a>
         <a href="./10.Support.html">Support</a>
         <input type="text" placeholder="Search">
-        <a style="font-size: 20px;" href="./other_files/0.Bag.html">Cart / Bag:-</a>
+        <a style="font-size: 20px" href="./other_files/0.Bag.html">Cart / Bag:-</a>
         <h2 id="cart-count">0</h2>
         <a href="./Signup.html">Log in / Sign up</a>
     </div>
@@ -32,18 +32,16 @@
             <h5>This is Online Electronics Retailer store.</h5>
             <img src="./Images/Logos/Black.png" alt="">
             <div>
-                <a href=""><h3>Forgot Password ?</h3></a>
                 <a href="./login.html"><h3>Click here for <span>Log in <img src="./Images/Logos/Black.png" alt=""></span></h3></a>
             </div>
         </div>
         <form id="form">
-            <h2>Create AppleOnline ID Here.</h2>
+            <h2>Create AppleOnline Account Here.</h2>
             <input type="text" placeholder="First Name" name="firstname" id="firstname">
             <input type="text" placeholder="Last Name" name="lastname" id="lastname">
             <input type="number" placeholder="Enter Mobile No." id="mobile">
             <input type="text" placeholder="Enter Email" name="email" id="email">
-            <input type="text" placeholder="Enter User Name" name="username" id="username">
-            <input type="password" placeholder="Enter Password" name="firstname" id="password">
+            <input type="password" placeholder="Enter Password" name="password" id="password">
             <input type="text" placeholder="Address" id="address">
             <input type="number" placeholder="Pin Code" id="pincode">
             <input id="submit" name="submit" value="Submit" type="submit">
@@ -59,7 +57,6 @@
     let lastname=document.getElementById("lastname");
     let mobile=document.getElementById("mobile");
     let email=document.getElementById("email");
-    let username=document.getElementById("username");
     let password=document.getElementById("password");
     let address=document.getElementById("address");
     let pinCode=document.getElementById("pincode");
@@ -73,37 +70,45 @@
             lastname:lastname.value,
             mobile:mobile.value,
             email:email.value,
-            username:username.value,
             password:password.value,
             address:address.value,
             pinCode:pinCode.value,
         }
-        if(checkRepeat(formdata))
+        if(checkRepeat(formdata)&&formdata.password!=="")
         {
             console.log("Yes");
-            alert("Email is already registered... Try to Log in.")
-        }else{
+            alert("Email/Mobile No. is already registered... Try to Log in.")
+        }else if(checkRepeat(formdata))
+        {
+            alert("Password is Not Entered.")
+        }
+        else{
             console.log("No");
             myUserData.push(formdata);
             alert("Sign in Successful")
             localStorage.setItem("Sign-up-Data",JSON.stringify(myUserData))
             
             alert("We're so happy You're here, you've been added to our mailing list and you will now be among the first to hear about new arrivals, big envents and special offers. As a special treat, enjoy 15% off on youe next purchase in-stories and online with code ***FIRSTPAY_APPLEONLINE***  AT CHECKOUT.");
-
+            
+            
+            //for redirecting to Index or home Page.
+            setTimeout(function(){
+            alert("Redirecting to Log in Page.",onclick=redirect());
+            },1000);
         }
              
     });
     function checkRepeat(data){
         for(let i=0; i<myUserData.length; i++)
         {
-            if(data.email==myUserData[i].email)
+            if(data.email==myUserData[i].email||data.mobile==myUserData[i].mobile||data.password==="")
             {
                 return true;
             }
-            else{
-                return false;
-            }
         }
+    }
+    function redirect(){
+        location.href="./login.html"
     }
 </script>
 </html>

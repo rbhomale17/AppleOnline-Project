@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppleOnline.com/SignUp</title>
+    <link rel="stylesheet" href="checkout.css">
+    <style>
+        #conform>h2{
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="conform">
+        <h2></h2>
+    </div>
+<div id="ascach">
+    <div id="main">
+        <div class="add">
+            <h2>Welcome to AppleOnline.com</h2>
+            <h5>This is Online Electronics Retailer store.</h5>
+            <img src="./Images/Logos/Black.png" alt="">
+            <div>
+                <a href="./Signup.html"><h3>Click here to <span>Track your Order.<img src="./Images/Logos/Black.png" alt=""></span></h3></a>
+            </div>
+        </div>
+        <form id="form">
+            <h2>Checkout Products.</h2>
+            <p>**Get 30% cashback on Card Payment**</p>
+            <input type="text" required placeholder="Enter Name" id="name">
+            <input type="number" required placeholder="Enter Mobile" id="mobile">            
+            <input type="text" required placeholder="Enter Address" id="address">
+            <input type="text" required placeholder="Enter City" id="city">
+            <input type="number" required placeholder="Enter Pin Code" id="pin">            
+            <input id="submit" name="submit" value="Submit" type="submit">
+            <img src="https://i.pinimg.com/originals/ba/9f/d1/ba9fd18b416ed2b9207fda4b8a09e5d1.png" alt="">
+        </form>
+    </div>
+</div>
+</body>
+<script>
+    let name=document.getElementById("name");
+    let mobile=document.getElementById("mobile");
+    let address=document.getElementById("address");
+    let city=document.getElementById("city");
+    let pinCode=document.getElementById("pin");
+    let form=document.querySelector("form");
+    let conform=document.querySelector("#conform>h2")
+let locationArray=[
+			'Ahmednagar',
+			'Akola',
+			'Amravati',
+			'Aurangabad',
+			'Bhandara',
+			'Beed',
+			'Buldhana',
+			'Chandrapur',
+			'Dhule',
+			'Gadchiroli',
+			'Gondia',
+			'Hingoli',
+			'Jalgaon',
+			'Jalna',
+			'Kolhapur',
+			'Latur',
+			'Mumbai City',
+			'Mumbai suburban',
+			'Nandurbar',
+			'Nanded',
+			'Nagpur',
+			'Nashik',
+			'Osmanabad',
+			'Parbhani',
+			'Pune',
+			'Raigad',
+			'Ratnagiri',
+			'Sindhudurg',
+			'Sangli',
+			'Solapur',
+			'Satara',
+			'Thane',
+			'Wardha',
+			'Washim',
+			'Yavatmal',
+		]
+    
+  
+    
+        let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
+        
+    form.addEventListener("submit",function(event){
+        let i=34;
+    
+    let  j=0;
+     if(i==0)
+     {
+         i=34;
+     } 
+     if(j==34)
+     {
+         j=0;
+     }
+     let k=10;
+     if(k===32)
+     {
+         k=16;
+     }
+        if(cart===[])
+        {
+            conform.textContent="Your Cart is Empty..."
+        }
+        else{
+        event.preventDefault();
+        let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
+        cart=[];
+        conform.textContent="Your Order Succsesfully Placed."
+        let trackOrder=JSON.parse(localStorage.getItem("track-my-order"))||[];
+        let orderData={
+            name:name.value,
+            mobile:mobile.value,
+            address:address.value,
+            city:city.value,
+            pinCode:pinCode.value,
+            Previous_location:locationArray[i-2],
+            Current_location:locationArray[j+3],
+            Next_location:locationArray[k+4],
+        };
+        // console.log(orderData);
+        trackOrder.push(orderData);
+        localStorage.setItem("track-my-order",JSON.stringify(trackOrder));
+    }
+        setTimeout(function(){
+        location.replace("./index.html");
+        },4000);
+
+    });
+</script>
+</html>
