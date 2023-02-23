@@ -68,7 +68,7 @@ color: black;
     padding: 3%;
     border: 1px solid rgb(230, 230, 230);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
+} 
 #main>.add{
     background-color: white;
     width: 50%;
@@ -120,7 +120,7 @@ span{
     font-size: 25px;
 }
 #form>img{
-    width: 70%;
+    width: 40%;
     margin: auto;
 }
 
@@ -135,6 +135,50 @@ span{
         width: 92%;
     }
     #navbar{
+        flex-direction: column;
+        height: 50px;
+    }
+    #navbar>a:nth-child(2){
         display: none;
     }
+    #navbar>a:nth-child(3){
+        display: none;
+    }
+    #navbar>a:nth-child(4){
+        display: none;
+    }
+    #navbar>a:nth-child(4){
+        display: none;
+    }
+    #navbar>a:nth-child(5){
+        display: none;
+    }
+    #navbar>a:nth-child(6){
+        display: none;
+    }
+    #navbar>a:nth-child(7){
+        display: none;
+    }
+    #navbar>a:nth-child(8){
+        display: none;
+    }
+    #navbar>a:nth-child(9){
+        display: none;
+    }
+    #navbar>a:nth-child(10){
+        display: none;
+    }
+    #navbar>a:nth-child(11){
+        display: none;
+    }
+    #navbar>a:nth-child(12){
+        display: none;
+    }
+    #navbar>a:nth-child(14){
+        display: none;
+    }
+    #navbar>#cart-count{
+        display: none;
+    }
+
 }

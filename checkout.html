@@ -88,10 +88,16 @@ let locationArray=[
 		]
     
   
-    
         let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
         
+        console.log(cart);
+        
+        
     form.addEventListener("submit",function(event){
+        event.preventDefault();
+        cart=[];
+        localStorage.setItem("Add-to-cart",JSON.stringify(cart))
+        console.log(cart)
         let i=34;
     
     let  j=0;
@@ -113,9 +119,7 @@ let locationArray=[
             conform.textContent="Your Cart is Empty..."
         }
         else{
-        event.preventDefault();
-        let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
-        cart=[];
+        
         conform.textContent="Your Order Succsesfully Placed."
         let trackOrder=JSON.parse(localStorage.getItem("track-my-order"))||[];
         let orderData={

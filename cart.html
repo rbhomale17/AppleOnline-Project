@@ -5,113 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AppleOnline.com/Cart</title>
-    <!-- <link rel="stylesheet" href="store.css"> -->
-    <style>
-        *{
-            box-sizing: border-box;
-        }
-        #navbar{
-width: 100%;
-margin: auto;
-display: flex;
-justify-content: space-around;
-background-color: white;
-font-size: 14px;
-height: 44px;
-align-items: center;
-opacity: 0.8;
-box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-}
-#navbar>img{
-width: 70px;
-}
-#navbar a{
-color: black;
-}
-#navbar>a:hover{
-color: lightgreen;
-opacity: 1;
-}
-#navbar>a>img{
-width: 45px;
-background: transparent;
-}
-        #container{
-            width: 95%;
-            margin: auto;
-            padding: 20px;
-            margin-top: 20px;
-            display: grid;
-            grid-template-columns: repeat(4,1fr);
-            gap: 70px 30px;
-            background-color: #F3E5F5;
-        }
-        a{
-            text-decoration: none;
-        }
-        #container>div{
-            box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
-            padding: 20px;
-            background-color: #E0F7FA;
-            height: 100%;
-            border-radius: 30px;
-        }
-        #container img{
-            width: 100%;
-        }
-        #inc{
-            margin: 10px;
-            /* background-color: aqua; */
-            padding: 7px;
-            font-size: 20px;
-        }
-        #dnc{
-            margin: 10px;
-            padding: 7px;
-            font-size: 20px;
-        }
-        
-        #delete{
-            width: 100%;
-            margin: auto;
-            margin-top: 40px;
-            padding: 7px;
-            font-size: 25px;
-            border: none;
-            border-radius: 40px;
-            background-color:#F8BBD0;
-        }
-        #cart{
-            width: 100%;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            background-color: #E3F2FD;
-            padding-left: 70px;
-            padding-right: 70px;
-            height: 80px;
-        }
-        #Checkout>a>button{
-            padding: 10px;
-            width: 150px;
-            font-size: large;
-            font-weight: bold;
-            font-style: inherit;
-            border: none;
-            outline: double;
-            /* border-radius: 40px; */
-            background-color:#fb641b;
-            color: #FFFFFF;
-        }
-        #quantity>span{
-            font-size: 30px;
-            background-color: aqua;
-        }
-        #value>span{
-            font-size: 30px;
-            background-color: aquamarine;
-        }
-    </style>
+    <link rel="stylesheet" href="cart.css">
 </head>
 <body>
     <div id="navbar">
@@ -157,7 +51,7 @@ let container=document.getElementById("container");
             let card=document.createElement("div");
 
             let image=document.createElement("img");
-            image.setAttribute("src",data[i].image);
+            image.setAttribute("src",data[i].thumbnail);
 
             let title=document.createElement("h3");
             title.innerText=data[i].title;
