@@ -36,6 +36,7 @@ width: 45px;
 background: transparent;
 }
 #start{
+    box-sizing: border-box;
     width: 80%;
     margin: auto;
     display: flex;
@@ -243,11 +244,11 @@ background-color: white
 }
 
 #acce{
-    width: 100%;
+    width: 80%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 10px 10px;
+    gap: 20px 20px;
     margin-top: 20px;
     /* background-color: aqua; */
 }
@@ -259,6 +260,7 @@ background-color: white
     border-radius: 30px;
     padding: 10px;
     margin: auto;
+    height: 550px;
 }
 #acce>div>img{
     width: 100%;
@@ -289,11 +291,11 @@ background-color: white
 }
 /* //music */
 #music{
-    width: 100%;
+    width: 80%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 10px 10px;
+    gap: 20px 20px;
     margin-top: 20px;
     /* background-color: aqua; */
 }
@@ -304,7 +306,7 @@ background-color: white
     border: none;
     border-radius: 30px;
     padding: 10px;
-    margin: auto;
+    /* margin: auto; */
 }
 #music>div>img{
     width: 100%;
@@ -340,4 +342,176 @@ background-color: white
     grid-template-columns: repeat(4,1fr);
     gap: 20px;
     margin-top: 30px;
+}
+#last {
+    width: 80%;
+    margin: auto;
+    margin-top: 60px;
+    border-top-style: dashed;
+}
+@media Only screen and (min-width:650px) and (max-width:900px) {
+    #grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #music{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #flex{
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+    }
+    #flex>a{
+        width: 90%;
+        margin: auto;
+        height: 500px;
+    }
+    #acce{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #bar{
+        flex-direction: column;
+    }
+    #specealist{
+        width: 100%;
+        grid-template-columns: repeat(1,1fr);
+    }
+    #specealist>div{
+        width: 100%;
+    }
+    #slide{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #navbar{
+        flex-direction: column;
+        height: 50px;
+    }
+    #navbar>a:nth-child(2){
+        display: none;
+    }
+    #navbar>a:nth-child(3){
+        display: none;
+    }
+    #navbar>a:nth-child(4){
+        display: none;
+    }
+    #navbar>a:nth-child(4){
+        display: none;
+    }
+    #navbar>a:nth-child(5){
+        display: none;
+    }
+    #navbar>a:nth-child(6){
+        display: none;
+    }
+    #navbar>a:nth-child(7){
+        display: none;
+    }
+    #navbar>a:nth-child(8){
+        display: none;
+    }
+    #navbar>a:nth-child(9){
+        display: none;
+    }
+    #navbar>a:nth-child(10){
+        display: none;
+    }
+    #navbar>a:nth-child(11){
+        display: none;
+    }
+    #navbar>a:nth-child(12){
+        display: none;
+    }
+    #navbar>a:nth-child(14){
+        display: none;
+    }
+    #navbar>#cart-count{
+        display: none;
+    }
+}
+
+@media Only screen and  (max-width:649px) {
+    #grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #music{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #flex{
+        flex-direction: column;
+        width: 100%;
+        margin: auto;
+    }
+    #flex>a{
+        width: 90%;
+        margin: auto;
+        height: 500px;
+    }
+    #acce{
+        width: 100%;
+        grid-template-columns: repeat(1,1fr);
+    }
+    #acce>div{
+        width: 80%;
+        height: 650px;
+    }
+    #bar{
+        flex-direction: column;
+    }
+    #specealist{
+        width: 100%;
+        grid-template-columns: repeat(1,1fr);
+    }
+    #specealist>div{
+        width: 100%;
+    }
+    #slide{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #navbar{
+        flex-direction: column;
+        height: 50px;
+    }
+    #navbar>a:nth-child(2){
+        display: none;
+    }
+    #navbar>a:nth-child(3){
+        display: none;
+    }
+    #navbar>a:nth-child(4){
+        display: none;
+    }
+    #navbar>a:nth-child(4){
+        display: none;
+    }
+    #navbar>a:nth-child(5){
+        display: none;
+    }
+    #navbar>a:nth-child(6){
+        display: none;
+    }
+    #navbar>a:nth-child(7){
+        display: none;
+    }
+    #navbar>a:nth-child(8){
+        display: none;
+    }
+    #navbar>a:nth-child(9){
+        display: none;
+    }
+    #navbar>a:nth-child(10){
+        display: none;
+    }
+    #navbar>a:nth-child(11){
+        display: none;
+    }
+    #navbar>a:nth-child(12){
+        display: none;
+    }
+    #navbar>a:nth-child(14){
+        display: none;
+    }
+    #navbar>#cart-count{
+        display: none;
+    }
 }

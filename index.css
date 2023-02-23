@@ -268,10 +268,11 @@ vertical-align: inherit
     margin-top: 10px;
     text-align: center;
 }
-#last{
+#last {
     width: 80%;
     margin: auto;
-    margin-bottom: 40px;
+    margin-top: 60px;
+    border-top-style: dashed;
 }
 #grid{
     width: 80%;
@@ -285,7 +286,43 @@ vertical-align: inherit
     #product_grid{
         grid-template-columns: repeat(1,1fr);
     }
+    /* #navbar{
+        display: none;
+    } */
+}
+@media only screen and (max-width:650px) {
+    #modify{
+        flex-direction: column;
+        height: 200px;
+        align-content: space-between;
+    }
+    #container{
+        grid-template-columns: repeat(1,1fr);
+    }
     #navbar{
+        flex-direction: column;
+        height: 400px;
+    }
+    #navbar>#cart-count{
         display: none;
     }
-}
+  }
+
+  @media only screen and (min-width:651px) and (max-width:850px) {
+    #modify{
+        flex-direction: column;
+        height: 140px;
+        align-content: space-between;
+    }
+    #container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #navbar{
+        flex-direction: column;
+        height: 400px;
+    }
+    #navbar>#cart-count{
+        display: none;
+    }
+    
+  }

@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="iphone.css">
+</head>
+<body>
+  <div id="navbar">
+    <a href="./Index.html"><img src="./Images/1.NavBar/Apple-Logo.png"  alt="" ></a>
+    <a href="./1.Store.html">Store</a>
+    <a href="./2.Mac.html">Mac</a>
+    <a href="./3.iPad.html">iPad</a>
+    <a href="./4.iPhone.html">iPhone</a>
+    <a href="./5.Watch.html">Watch</a>
+    <a href="./6.AirPods.html">AirPods</a>
+    <a href="./7.TV_&_Home.html">TV & Home</a>
+    <a href="./8.Entertainment.html">Entertainment</a>
+    <a href="./9.Accessories.html">Accessories</a>
+    <a href="./10.Support.html">Support</a>
+    <a style="font-size: 20px;" href="./cart.html">Cart / Bag:-</a>
+        <h2 id="cart-count">0</h2>
+    <a href="./Signup.html">Log in / Sign up</a>
+</div>
+<div id="modify">
+  <div id="sort">
+    <select name="sorting" id="sorting">
+      <option value="">Select price</option>
+      <option value="High">High to Low</option>
+      <option value="Low">Low to High</option>
+    </select>
+  </div>
+  <div id="filterCategory">
+    <select name="filter category" id="categoryFilter">
+      <option value="">Select Category of Product</option>
+      <option value="mobile">Mobile</option>
+      <option value="MacBook">MacBook</option>
+      <option value="Watch">Watch</option>
+      <option value="AirPod">AirPod</option>
+      <option value="assc">Accessories</option>
+      <option value="HomePod">HomePod</option>
+      <option value="Adapter">Charging Adapter</option>
+    </select>
+  </div>
+  <div id="filterPrice">
+    <select name="filter" id="filter">
+      <option value="">Select Price Range</option>
+      <option value="300">upto $300</option>
+      <option value="600">Between $301--$600</option>
+      <option value="900">Between $601--$900</option>
+      <option value="901">More than $900</option>
+    </select>
+  </div>
+</div>
+    <div id="container">
+        <!-- append data here -->
+    </div>
+</body>
+<script>
+    let product= [
+      {
+        "amazonPrime": true,
+        "price": "399.00",
+        "reviews": {
+          "rating": 4.6,
+          "total_reviews": 73
+        },
+        category:"mobile",
+        "score": "335.80",
+        "sponsored": false,
+        "thumbnail": "https://m.media-amazon.com/images/I/810DvHOZ9nL._AC_UL320_.jpg",
+        "title": "New Apple iPhone SE (64GB, (Product) RED) [Locked] + Cricket Wireless Plan",
+        "url": "https://www.amazon.com/dp/B087623TMW"
+      },
+      {
+        "amazonChoice": false,
+        "amazonPrime": true,
+        "asin": "B01N2K14U7",
+        "bestSeller": false,category:"mobile",
+        "price":"100",
+        "thumbnail": "https://m.media-amazon.com/images/I/61+fbdrjtCL._AC_UY218_.jpg",
+        "title": "Simple Mobile Prepaid - Apple iPhone 7 (32GB) - Black [Locked to Carrier – Simple Mobile]",
+        "url": "https://www.amazon.com/dp/B01N2K14U7"
+      },
+      {
+        "amazonChoice": false,
+        "amazonPrime": true,
+        "asin": "B084GT2B5C",
+        "bestSeller": false,category:"mobile",
+        "price": "650",
+        "reviews": {
+          "rating": 4.2,
+          "total_reviews": 25
+        },
+        "score": "105.00",
+        "sponsored": false,
+        "thumbnail": "https://m.media-amazon.com/images/I/71Z8C1zRgAL._AC_UY218_.jpg",
+        "title": "Apple iPhone 11 (64GB, Yellow) [Locked] + Cricket Wireless Plan",
+        "url": "https://www.amazon.com/dp/B084GT2B5C"
+      },
+      {category:"mobile",
+            "asin": "B081Y5YMG8",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51jE4%2BvecwL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B081Y5YMG8/?th=1&psc=1",
+            "price": "234",
+            "title": "Green 256GB For AT&T"
+          },
+      {
+        "amazonChoice": false,
+        "amazonPrime": false,
+        "asin": "B07P6Y7954",
+        "bestSeller": false,
+        "price": "359",
+        "reviews": {
+          "rating": 4.5,
+          "total_reviews": 8430
+        },category:"mobile",
+        "score": "37935.00",
+        "sponsored": false,
+        "thumbnail": "https://m.media-amazon.com/images/I/81FyKX6ml6L._AC_UY218_.jpg",
+        "title": "Apple iPhone XR, 64GB, Black - Fully Unlocked (Renewed)",
+        "url": "https://www.amazon.com/dp/B07P6Y7954"
+      },
+      {category:"mobile",
+        "amazonChoice": false,
+        "amazonPrime": true,
+        "asin": "B01N4R20RS",
+        "bestSeller": false,
+        "price": "456",
+        "reviews": {
+          "rating": 3.9,
+          "total_reviews": 17015
+        },
+        "score": "66358.50",
+        "sponsored": false,
+        "thumbnail": "https://m.media-amazon.com/images/I/41ZtfBP1C6L._AC_UY218_.jpg",
+        "title": "Apple iPhone 7, 32GB, Black - Fully Unlocked (Renewed)",
+        "url": "https://www.amazon.com/dp/B01N4R20RS"
+      },
+      {category:"mobile",
+        "amazonChoice": false,
+        "amazonPrime": true,
+        "asin": "B07ZPKR714",
+        "bestSeller": false,
+        "price": "523",
+        "reviews": {
+          "rating": 4.5,
+          "total_reviews": 327
+        },
+        "score": "1471.50",
+        "sponsored": false,
+        "thumbnail": "https://m.media-amazon.com/images/I/51GUjMAFDbL._AC_UY218_.jpg",
+        "title": "Apple iPhone 11, 128GB, Black - Fully Unlocked (Renewed)",
+        "url": "https://www.amazon.com/dp/B07ZPKR714"
+      },
+      {category:"HomePod",
+            id:1,
+            thumbnail:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-select-midnight-202210?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1670557210097",
+            title:"HomePod - Midnight",
+            price:`${299}`
+        },
+        {category:"AirPod",
+            id:2,
+            thumbnail:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQD83?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1660803972361",
+            title:"AirPods Pro (2nd generation)",
+            price:`${249}`
+        },
+        {category:"Homepod",
+            id:3,
+            thumbnail:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-mini-select-yellow-202110?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1632925510000",
+            title:"HomePod mini - Yellow",
+            price:`${199}`
+        },
+        {category:"AirPod",
+            id:4,
+            thumbnail:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-max-select-silver-202011?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1604021221000",
+            title:"AirPods Max - Silver",
+            price:`${899}`
+        },
+        {category:"AirPod",
+            id:5,
+            thumbnail:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MME73?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1632861342000",
+            title:"AirPods (3rd generation) with Lightning Charging Case",
+            price:`${299}`
+        },
+        {category:"HomePod",
+            id:6,
+            thumbnail:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MJ4X3?wid=200&hei=200&fmt=jpeg&qlt=95&.v=1621876626000",
+            title:"Beats Studio Buds – True Wireless Noise Cancelling Earphones – Black",
+            price:`${499}`
+        },
+      {category:"mobile",
+        "amazonChoice": false,
+        "amazonPrime": false,
+        "asin": "B07YYM3HFW",
+        "bestSeller": false,
+        "price": "456",
+        "reviews": {
+          "rating": 4.4,
+          "total_reviews": 5751
+        },
+        "score": "25304.40",
+        "sponsored": false,
+        "thumbnail": "https://m.media-amazon.com/images/I/616deySCZpL._AC_UY218_.jpg",
+        "title": "Apple iPhone 8 Plus, 64GB, Space Gray - Fully Unlocked (Renewed)",
+        "url": "https://www.amazon.com/dp/B07YYM3HFW"
+      },
+      {
+        "amazonChoice": false,
+        "amazonPrime": false,
+        "asin": "B07ZQRMWVB",
+        "bestSeller": false,
+        "price": "854",category:"mobile",
+        "reviews": {
+          "rating": 4.4,
+          "total_reviews": 134
+        },
+        "score": "589.60",
+        "sponsored": false,
+        "thumbnail": "https://m.media-amazon.com/images/I/61vflt1U5gL._AC_UY218_.jpg",
+        "title": "Apple iPhone 11 Pro, 64GB, Midnight Green - Fully Unlocked (Renewed)",
+        "url": "https://www.amazon.com/dp/B07ZQRMWVB"
+      },
+      {
+        "amazonChoice": false,
+        "amazonPrime": false,
+        "asin": "B07KFMTWVF",category:"mobile",
+        "bestSeller": false,
+        "price":"1247",
+        "reviews": {
+          "rating": 4.4,
+          "total_reviews": 2755
+        },
+        "score": "12122.00",
+        "sponsored": false,
+        "thumbnail": "https://m.media-amazon.com/images/I/71isxv6Wd-L._AC_UY218_.jpg",
+        "title": "Apple iPhone XS Max, 64GB, Gold - Fully Unlocked (Renewed)",
+        "url": "https://www.amazon.com/dp/B07KFMTWVF"
+      },
+      {
+        "amazonChoice": false,
+        "amazonPrime": true,
+        "asin": "B077578W38",category:"mobile",
+        "bestSeller": false,
+        "price": "1549",
+        "reviews": {
+          "rating": 4.2,
+          "total_reviews": 3854
+        },
+        "score": "16186.80",
+        "sponsored": false,
+        "thumbnail": "https://m.media-amazon.com/images/I/719knfTwPvL._AC_UY218_.jpg",
+        "title": "Apple iPhone X, 64GB, Space Gray - Fully Unlocked (Renewed)",
+        "url": "https://www.amazon.com/dp/B077578W38"
+      },
+      {
+        "amazonChoice": false,
+        "amazonPrime": true,
+        "asin": "B07Z4681LQ",category:"mobile",
+        "bestSeller": false,
+        "price":  "1069.99",
+         
+        "reviews": {
+          "rating": 4.1,
+          "total_reviews": 150
+        },
+        "score": "615.00",
+        "sponsored": false,
+        "thumbnail": "https://m.media-amazon.com/images/I/61GggH1hAaL._AC_UY218_.jpg",
+        "title": "Apple iPhone 11 Pro Max, 256GB, Midnight Green, Fully Unlocked (Renewed)",
+        "url": "https://www.amazon.com/dp/B07Z4681LQ"
+      },
+      {
+        "amazonChoice": false,
+        "amazonPrime": true,
+        "asin": "B07XSQT4Q3",
+        "bestSeller": false,
+        "price":  "1099.00",category:"mobile",
+        
+        "reviews": {
+          "rating": 3.2,
+          "total_reviews": 78
+        },
+        "score": "249.60",
+        "sponsored": false,
+        "thumbnail": "https://m.media-amazon.com/images/I/81mxun+6pEL._AC_UY218_.jpg",
+        "title": "Simple Mobile Prepaid - Apple iPhone 11 Pro Max (64GB) - Midnight Green [Locked to Carrier – Simple Mobile]",
+        "url": "https://www.amazon.com/dp/B07XSQT4Q3"
+      },
+      {
+        "amazonChoice": false,
+        "amazonPrime": true,
+        "asin": "B07XLGM7L1",
+        "bestSeller": false,category:"mobile",
+        "price":"699.00",
+        
+        "reviews": {
+          "rating": 3.1,
+          "total_reviews": 107
+        },
+        "score": "331.70",
+        "sponsored": false,
+        "thumbnail": "https://m.media-amazon.com/images/I/715HCLsOHbL._AC_UY218_.jpg",
+        "title": "Simple Mobile Prepaid - Apple iPhone 11 (64GB) - (Product) Red [Locked to Carrier – Simple Mobile]",
+        "url": "https://www.amazon.com/dp/B07XLGM7L1"
+      },
+      {
+        "amazonChoice": false,
+        "amazonPrime": true,
+        "asin": "B07SC58QBW",category:"mobile",
+        "bestSeller": false,
+        "price":  "509.99",
+        "reviews": {
+          "rating": 4.3,
+          "total_reviews": 2476
+        },
+        "score": "10646.80",
+        "sponsored": false,
+        "thumbnail": "https://m.media-amazon.com/images/I/71XeQzRDyML._AC_UY218_.jpg",
+        "title": "Apple iPhone XS, 64GB, Space Gray - Fully Unlocked (Renewed)",
+        "url": "https://www.amazon.com/dp/B07SC58QBW"
+      },
+      {
+            "asin": "B084HMCY98",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51U8WCTTmCL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084HMCY98/?th=1&psc=1",
+            "price": "235",category:"mobile",
+            "title": "Purple 128GB T-Mobile"
+          },
+          {category:"Watch",
+            id:1,
+            thumbnail:"./Images/store/accs.2.jpg",
+            title:"45mm Black Unity Sport Loop",
+            price:`${349}`
+        },
+        {category:"assc",
+            id:2,
+            thumbnail:"./Images/store/assc.3.jpg",
+            title:"iPhone 14 Pro Clear Case with MagSafe",
+            price:`${49}`
+        },      
+        {category:"assc",
+            id:3,
+            thumbnail:"./Images/store/assc.4.jpg",
+            title:"iPhone 14 Silicone Case with MagSafe - Lilac",
+            price:`${119}`
+        },        
+        {category:"assc",
+            id:4,
+            thumbnail:"./Images/store/assc.5.jpg",
+            title:"Smart Folio for iPad (10th generation) - Lemonade",
+            price:`${129}`
+        },
+        {category:"assc",
+            id:5,
+            thumbnail:"./Images/store/assc.6.jpg",
+            title:"iPhone 14 Pro Leather Case with MagSafe - Ink",
+            price:`${159}`
+        },
+        {category:"assc",
+            id:6,
+            thumbnail:"./Images/store/assc.7.jpg",
+            title:"iPhone Leather Wallet with MagSafe - Umber",
+            price:`${359}`
+        },
+      {category:"mobile",
+        "amazonChoice": false,
+        "amazonPrime": false,
+        "asin": "B088NQXD8T",
+        "bestSeller": false,
+        "price":"374.97",
+         
+        "reviews": {
+          "rating": 3,
+          "total_reviews": 2
+        },
+        "score": "6.00",
+        "sponsored": false,
+        "thumbnail": "https://m.media-amazon.com/images/I/81K+adaNRiL._AC_UY218_.jpg",
+        "title": "Apple iPhone SE, 64GB, Black - Fully Unlocked (Renewed)",
+        "url": "https://www.amazon.com/dp/B088NQXD8T"
+      },
+      {category:"Watch",
+            id:1,
+            thumbnail:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQDY3ref_VW_PF+watch-49-titanium-ultra_VW_PF_WF_CO+watch-face-49-alpine-ultra_VW_PF_WF_CO?wid=700&hei=700&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1660713658959%2C1660927567672%2C1660927561147",
+            title:"45mm orange Unity Sport Loop",
+            price:`${549}`
+        },
+        {category:"Watch",
+            id:2,
+            thumbnail:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQE23ref_VW_34FR+watch-49-titanium-ultra_VW_34FR_WF_CO+watch-face-49-alpine-ultra_VW_34FR_WF_CO?wid=700&hei=700&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1660713657930%2C1660927566964%2C1660927563656",
+            title:"45mm grey Unity Sport Loop",
+            price:`${649}`
+        },      
+        {category:"Watch",
+            id:3,
+            thumbnail:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQE93_VW_34FR+watch-49-titanium-ultra_VW_34FR_WF_CO+watch-face-49-ocean-ultra_VW_34FR_WF_CO?wid=375&hei=356&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1661199910082%2C1660927566964%2C1660927563662",
+            title:"watch New",
+            price:`${819}`
+        },        
+        {category:"Watch",
+            id:4,
+            thumbnail:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQE93_VW_34FR+watch-49-titanium-ultra_VW_34FR_WF_CO+watch-face-49-ocean-ultra_VW_34FR_WF_CO?wid=700&hei=700&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1661199910082%2C1660927566964%2C1660927563662",
+            title:"White Oceon band",
+            price:`${799}`
+        },
+        {category:"Watch",
+            id:5,
+            thumbnail:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-compare-se-202209?wid=520&hei=616&fmt=jpeg&qlt=90&.v=1660695773922",
+            title:"Apple Watch SE",
+            price:`${259}`
+        },
+        {category:"Watch",
+            id:6,
+            thumbnail:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-series8-shop-202209?wid=880&hei=1280&fmt=jpeg&qlt=90&.v=1660700242681",
+            title:"black New Watch",
+            price:`${359}`
+        },
+      {
+        "amazonChoice": false,
+        "amazonPrime": true,
+        "asin": "B081TLRQ9H",
+        "bestSeller": false,category:"mobile",
+        "price":"344.00",
+        "reviews": {
+          "rating": 4.1,
+          "total_reviews": 7675
+        },
+        "score": "31467.50",
+        "sponsored": false,
+        "thumbnail": "https://m.media-amazon.com/images/I/71b4kAq+5QL._AC_UY218_.jpg",
+        "title": "Apple iPhone 7 Plus, 128GB, Black - Fully Unlocked (Renewed)",
+        "url": "https://www.amazon.com/dp/B081TLRQ9H"
+      },
+      {
+
+        "price":"240",category:"mobile",
+        "thumbnail": "https://m.media-amazon.com/images/I/71aOr1CuM1L._AC_UY218_.jpg",
+        "title": "Apple iPhone 8 a1905 64GB LTE GSM Unlocked (Renewed)",
+        "url": "https://www.amazon.com/dp/B07HKQ61NV"
+      },
+      {
+        "price":"198",category:"mobile",
+        "thumbnail": "https://m.media-amazon.com/images/I/51cRE43zKwL._AC_UY218_.jpg",
+        "title": "Apple iPhone 7 32GB, Rose Gold (Renewed)",
+        "url": "https://www.amazon.com/dp/B0731HBTZ7"
+      },
+      {
+        "price":"449.00",category:"mobile",
+        "thumbnail": "https://m.media-amazon.com/images/I/611nmTRjpcL._AC_UY218_.jpg",
+        "title": "Simple Mobile Prepaid - Apple iPhone XR (64GB) - Red [Locked to Carrier – Simple Mobile]",
+        "url": "https://www.amazon.com/dp/B07K97BQDF"
+      },
+      {
+     
+        "price": "39.97",category:"AirPod",
+        "thumbnail": "https://m.media-amazon.com/images/I/51kLgv1Hy6L._AC_UY218_.jpg",
+        "title": "Wireless Earbuds Bluetooth 5.0 Headphones 3D Stereo Noise Canceling Headset Auto Paring Sport Bluetooth Earbuds with Fast Charging Case for Apple AirPods pro iPhone Android in-Ear Earphones",
+        "url": "https://www.amazon.com/dp/B08CXQZFW7"
+      },
+      {
+        "price":"39.98",category:"AirPod",
+        "thumbnail": "https://m.media-amazon.com/images/I/41vIMJ9OOfL._AC_SX679_.jpg",
+        "title": "Wireless Earbuds Bluetooth 5.0 Headphones CVC8.0 Noise Canceling Bluetooth Headphones in-Ear 3D Stereo Headset with Fast Charging Case for iPhone/Samsung/Android AirPods Pro Apple Earbuds",
+        "url": "https://www.amazon.com/dp/B08G8KX1GZ"
+      },
+      {
+        "price":"21.99",category:"AirPod",
+        "thumbnail": "https://m.media-amazon.com/images/I/815Ft7CdvPL._AC_UY218_.jpg",
+        "title": "Wireless Earbuds Bluetooth Headphones Mini Bluetooth Earbuds Super Bass Wireless Headset with LED Power Display Charging Case, Built-in Microphone, Sport in-Ear Ear Buds with Charging Case",
+        "url": "https://www.amazon.com/dp/B07YXZTLLT"
+      },
+      {
+        "price":"7.99",category:"Adapter",
+        "thumbnail": "https://m.media-amazon.com/images/I/51yjoG3P24L._AC_UY218_.jpg",
+        "title": "Headphone Adapter 3.5mm Jack Adapter Charger for iPhone 11/11 Pro/8/8Plus/7/7Plus/X/10/Xs/Xs Max 2 in 1 Earphone Audio Connector Music Splitter Cable Accessories for All iOS System",
+        "url": "https://www.amazon.com/dp/B07Z1YH1WD"
+      },
+    {category:"mobile",
+      "thumbnail": "https://images-na.ssl-images-amazon.com/images/I/41Uq0DlOwBL._AC_SY879_.jpg",
+      "price": 719.95,
+      "title": "Apple iPhone 11, 128GB, Black - Fully Unlocked (Renewed)",
+      "url": "https://www.amazon.com/dp/B07ZPKR714",
+    },
+      {
+          category:"mobile",
+            "asin": "B081Y5H8P4",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51HFI5SiQOL._AC_SY550_.jpg",
+            "link": "https://www.amazon.com/dp/B081Y5H8P4/?th=1&psc=1",
+            "price": "753",
+            "title": "Green 64GB For AT&T"
+          },
+          {
+            "asin": "B07ZPKN6YR",category:"mobile",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/61gYe3YaoxL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B07ZPKN6YR/?th=1&psc=1",
+            "price": "654",
+            "title": "Black 64GB Fully Unlocked"
+          },
+          {
+            "asin": "B084HLYBM6",category:"mobile",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51jBEgTTCiL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084HLYBM6/?th=1&psc=1",
+            "price": "123",
+            "title": "Yellow 64GB T-Mobile"
+          },
+          {
+            "asin": "B084GXR3ZY",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51w2Bq53sGL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084GXR3ZY/?th=1&psc=1",
+            "price": "654",category:"mobile",
+            "title": "Purple 256GB Verizon"
+          },
+          {category:"mobile",
+            "asin": "B07ZLGR1B1",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/616MDc-rFnL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B07ZLGR1B1/?th=1&psc=1",
+            "price": "346",
+            "title": "White 256GB Fully Unlocked"
+          },
+          {category:"mobile",
+            "asin": "B07ZPKBL9V",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/6167QZVZocL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B07ZPKBL9V/?th=1&psc=1",
+            "price": "942",
+            "title": "Red 64GB Fully Unlocked"
+          },
+          {category:"mobile",
+            "asin": "B07ZPKG5TG",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/61YfZaigPbL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B07ZPKG5TG/?th=1&psc=1",
+            "price": "888",
+            "title": "Red 128GB Fully Unlocked"
+          },
+          {category:"mobile",
+            "asin": "B07ZPJ8YZ6",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51gc61ERj8L._AC_SX569_.jpg",
+            "link": "https://www.amazon.com/dp/B07ZPJ8YZ6/?th=1&psc=1",
+            "price": "264",
+            "title": "Yellow 64GB Fully Unlocked"
+          },
+          {category:"mobile",
+            "asin": "B07ZPL6Y2D",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/513AlZK6SML._AC_SY550_.jpg",
+            "link": "https://www.amazon.com/dp/B07ZPL6Y2D/?th=1&psc=1",
+            "price": "316",
+            "title": "Black 256GB Fully Unlocked"
+          },
+          {category:"mobile",
+            "asin": "B081Y5C68R",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51wbAAz5O6L._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B081Y5C68R/?th=1&psc=1",
+            "price": "356",
+            "title": "Red 256GB For AT&T"
+          },
+          {category:"mobile",
+            "asin": "B07ZPJJPDN",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/616MDc-rFnL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B07ZPJJPDN/?th=1&psc=1",
+            "price": "155",
+            "title": "White 128GB Fully Unlocked"
+          },
+          {category:"mobile",
+            "asin": "B084GXXP31",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51Og5QNkJAL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084GXXP31/?th=1&psc=1",
+            "price": "546",
+            "title": "Black 256GB Verizon"
+          },
+          {category:"mobile",
+            "asin": "B07ZPKDYDL",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51Mm%2BgaZCSL._AC_SY355_.jpg",
+            "link": "https://www.amazon.com/dp/B07ZPKDYDL/?th=1&psc=1",
+            "price": "424",
+            "title": "Yellow 256GB Fully Unlocked"
+          },
+          {category:"mobile",
+            "asin": "B084HLSVJN",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51nKq12W98L._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084HLSVJN/?th=1&psc=1",
+            "price": "324",
+            "title": "White 128GB T-Mobile"
+          },
+          {category:"mobile",
+            "asin": "B081Y45G46",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51DSrXcUphL._AC_SY355_.jpg",
+            "link": "https://www.amazon.com/dp/B081Y45G46/?th=1&psc=1",
+            "price": "475",
+            "title": "Black 64GB For AT&T"
+          },
+          {category:"mobile",
+            "asin": "B084GX5ZQ8",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51a82EFvJIL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084GX5ZQ8/?th=1&psc=1",
+            "price": "346",
+            "title": "Yellow 128GB Verizon"
+          },
+          {category:"mobile",
+            "asin": "B07ZPK3KWH",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/61ZFE%2BoSxgL._AC_SY355_.jpg",
+            "link": "https://www.amazon.com/dp/B07ZPK3KWH/?th=1&psc=1",
+            "price": "694",
+            "title": "Green 128GB Fully Unlocked"
+          },
+          {category:"mobile",
+            "asin": "B07ZPJW2XH",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/61xLP0s-saL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B07ZPJW2XH/?th=1&psc=1",
+            "price": "356",
+            "title": "White 64GB Fully Unlocked"
+          },
+          {category:"mobile",
+            "asin": "B07ZPJQ413",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/515NY6oJAcL._AC_SY355_.jpg",
+            "link": "https://www.amazon.com/dp/B07ZPJQ413/?th=1&psc=1",
+            "price": "698",
+            "title": "Red 256GB Fully Unlocked"
+          },
+          {category:"mobile",
+            "asin": "B084HMBDV6",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51nKq12W98L._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084HMBDV6/?th=1&psc=1",
+            "price": "265",
+            "title": "White 64GB T-Mobile"
+          },
+          {category:"mobile",
+            "asin": "B07ZPKF8RG",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/61DanysfE8L._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B07ZPKF8RG/?th=1&psc=1",
+            "price": "655",
+            "title": "Purple 64GB Fully Unlocked"
+          },
+          {category:"mobile",
+            "asin": "B081Y5LNJD",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51nKq12W98L._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B081Y5LNJD/?th=1&psc=1",
+            "price": "565",
+            "title": "White 256GB For AT&T"
+          },
+          {category:"mobile",
+            "asin": "B084HM3XGJ",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51jBEgTTCiL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084HM3XGJ/?th=1&psc=1",
+            "price": "441",
+            "title": "Yellow 128GB T-Mobile"
+          },
+          {category:"mobile",
+            "asin": "B084GX4BVG",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51Og5QNkJAL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084GX4BVG/?th=1&psc=1",
+            "price": "465",
+            "title": "Black 128GB Verizon"
+          },
+          {category:"mobile",
+            "asin": "B08GJC6K83",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/41StAczCbSL._AC_.jpg",
+            "link": "https://www.amazon.com/dp/B08GJC6K83/?th=1&psc=1",
+            "price": "444",
+            "title": "Purple 64GB AT&T \\/ T-Mobile"
+          },
+          {category:"mobile",
+            "asin": "B084H7Q8BQ",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51jE4%2BvecwL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084H7Q8BQ/?th=1&psc=1",
+            "price": "333",
+            "title": "Green 64GB Verizon"
+          },
+          {category:"mobile",
+            "asin": "B08GJ9K8QW",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/41Cx9QwUJSL._AC_.jpg",
+            "link": "https://www.amazon.com/dp/B08GJ9K8QW/?th=1&psc=1",
+            "price": "345",
+            "title": "White 64GB AT&T \\/ T-Mobile"
+          },
+          {category:"mobile",
+            "asin": "B084GX6HR2",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51Og5QNkJAL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084GX6HR2/?th=1&psc=1",
+            "price": "446",
+            "title": "Black 64GB Verizon"
+          },
+          {category:"mobile",
+            "asin": "B081Y52WRG",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51ctDoW%2B-NL._AC_SX425_.jpg"
+                  ,
+            "link": "https://www.amazon.com/dp/B081Y52WRG/?th=1&psc=1",
+            "price": "369",
+            "title": "Black 256GB For AT&T"
+          },
+          {category:"mobile",
+            "asin": "B084HM9YWW",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51ctDoW%2B-NL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084HM9YWW/?th=1&psc=1",
+            "price": "100",
+            "title": "Black 64GB T-Mobile"
+          },
+          {category:"mobile",
+            "asin": "B081Y5K5GZ",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51U8WCTTmCL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B081Y5K5GZ/?th=1&psc=1",
+            "price": "500",
+            "title": "Purple 64GB For AT&T"
+          },
+          {category:"mobile",
+            "asin": "B081Y62YW6",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51nKq12W98L._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B081Y62YW6/?th=1&psc=1",
+            "price": "499",
+            "title": "White 128GB For AT&T"
+          },
+          {category:"mobile",
+            "asin": "B07ZPKYXLZ",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51gc61ERj8L._AC_SX355_.jpg",
+            "link": "https://www.amazon.com/dp/B07ZPKYXLZ/?th=1&psc=1",
+            "price": "399",
+            "title": "Yellow 128GB Fully Unlocked"
+          },
+          {category:"mobile",
+            "asin": "B081Y53THT",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/515NY6oJAcL._AC_SY355_.jpg",
+            "link": "https://www.amazon.com/dp/B081Y53THT/?th=1&psc=1",
+            "price": "299",
+            "title": "Red 128GB For AT&T"
+          },
+          {category:"mobile",
+            "asin": "B084GXSRL8",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51J6EtHx1uL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084GXSRL8/?th=1&psc=1",
+            "price": "199",
+            "title": "Red 256GB Verizon"
+          },
+          {category:"mobile",
+            "asin": "B084GXFKCF",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51hkJ%2BP0WuL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084GXFKCF/?th=1&psc=1",
+            "price": "599",
+            "title": "Green 128GB Verizon"
+          },
+          {category:"mobile",
+            "asin": "B084H3TFCD",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51nKq12W98L._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084H3TFCD/?th=1&psc=1",
+            "price": "374",
+            "title": "White 256GB Verizon"
+          },
+          {category:"mobile",
+            "asin": "B081Y5D817",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51Bl6-In6fL._AC_SY355_.jpg",
+            "link": "https://www.amazon.com/dp/B081Y5D817/?th=1&psc=1",
+            "price": "514",
+            "title": "White 64GB For AT&T"
+          },
+          {category:"mobile",
+            "asin": "B07ZPKR714",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51GUjMAFDbL._AC_SY355_.jpg",
+            "link": "https://www.amazon.com/dp/B07ZPKR714/?th=1&psc=1",
+            "price": "447",
+            "title": "Black 128GB Fully Unlocked"
+          },
+          {category:"mobile",
+            "asin": "B081Y51RLQ",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/515NY6oJAcL._AC_SY355_.jpg",
+            "link": "https://www.amazon.com/dp/B081Y51RLQ/?th=1&psc=1",
+            "price": "450",
+            "title": "Red 64GB For AT&T"
+          },
+          {category:"mobile",
+            "asin": "B081Y4SML7",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51PBqTnGQCL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B081Y4SML7/?th=1&psc=1",
+            "price": "499",
+            "title": "Yellow 128GB For AT&T"
+          },
+          {category:"mobile",
+            "asin": "B084H73TF6",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51U8WCTTmCL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084H73TF6/?th=1&psc=1",
+            "price": "412",
+            "title": "Purple 128GB Verizon"
+          },
+          {category:"mobile",
+            "asin": "B081Y4X4BT",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51ZjsPaAFsL._AC_SY450_.jpg",
+            "link": "https://www.amazon.com/dp/B081Y4X4BT/?th=1&psc=1",
+            "price": "399",
+            "title": "Purple 128GB For AT&T"
+          },
+          {category:"mobile",
+            "asin": "B081Y5JR1B",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51HFI5SiQOL._AC_SY355_.jpg",
+            "link": "https://www.amazon.com/dp/B081Y5JR1B/?th=1&psc=1",
+            "price": "667",
+            "title": "Green 128GB For AT&T"
+          },
+          {category:"MacBook",
+            id:2,
+            thumbnail:"https://www.apple.com/v/macbook-air-m1/d/images/overview/hero_endframe__ea0qze85eyi6_large_2x.jpg",
+            title:"macbook-air-m1",
+            price:`${2249}`
+        },        
+        {category:"MacBook",
+            id:2,
+            thumbnail:"https://www.apple.com/v/macbook-air-m2/e/images/overview/design/design_top__fpzme7txr3ee_large.jpg",
+            title:"Macbook-air-m2 (2nd generation)",
+            price:`${2549}`
+        },        
+        {category:"MacBook",
+            id:2,
+            thumbnail:"https://www.apple.com/v/macbook-pro-13/p/images/overview/hero_endframe__bsza6x4fldiq_large.jpg",
+            title:"macbook-pro-13 (2nd generation)",
+            price:`${2649}`
+        },      
+          {category:"MacBook",
+            id:2,
+            thumbnail:"https://www.apple.com/v/macbook-pro-14-and-16/e/images/overview/camera/spatial_audio__dipr8iji32uu_large.jpg",
+            title:"Macmini Pro (2nd generation)",
+            price:`${2699}`
+        },
+        {category:"MacBook",
+            id:2,
+            thumbnail:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp14-spacegray-select-202301?wid=452&hei=420&fmt=jpeg&qlt=95&.v=1671304673229",
+            title:"MacMax Pro (2nd generation)",
+            price:`${2799}`
+        },
+        {category:"MacBook",
+            id:2,
+            thumbnail:"https://www.apple.com/v/macbook-pro-14-and-16/e/images/overview/camera/spatial_audio__dipr8iji32uu_large.jpg",
+            title:"Mac Pro (2nd generation)",
+            price:`${999}`
+        },
+          {category:"mobile",
+            "asin": "B084HMBBP9",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51jE4%2BvecwL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084HMBBP9/?th=1&psc=1",
+            "price": "355",
+            "title": "Green 64GB T-Mobile"
+          },
+          {category:"mobile",
+            "asin": "B07ZPHSHPG",
+            "thumbnail": 
+                  "https://images-na.ssl-images-amazon.com/images/I/51HFI5SiQOL._AC_SY355_.jpg",
+            "link": "https://www.amazon.com/dp/B07ZPHSHPG/?th=1&psc=1",
+            "price": "420",
+            "title": "Green 64GB Fully Unlocked"
+          },
+          {category:"mobile",
+            "asin": "B084GWZK3C",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/616MDc-rFnL._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084GWZK3C/?th=1&psc=1",
+            "price": "1001",
+            "title": "White 64GB Verizon"
+          },
+          {category:"mobile",
+            "asin": "B084GXB3KC",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51nKq12W98L._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084GXB3KC/?th=1&psc=1",
+            "price": "872",
+            "title": "White 128GB Verizon"
+          },
+          {category:"mobile",
+            "asin": "B084HMT5P3",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51wbAAz5O6L._AC_SX425_.jpg",
+            "link": "https://www.amazon.com/dp/B084HMT5P3/?th=1&psc=1",
+            "price": "555",
+            "title": "Red 128GB T-Mobile"
+          },
+          {category:"iPad",
+            id:2,
+            thumbnail:"https://www.apple.com/v/ipad-10.9/b/images/overview/hero/hero__ecv967jz1y82_large.jpg",
+            title:"ipad Pro (2nd generation)",
+            price:`${949}`
+        },       
+         {
+            id:2,category:"iPad",
+            thumbnail:"https://www.apple.com/v/ipad-10.9/b/images/overview/ipad-accessories/folio_endframe__e5n229k0kay6_large.jpg",
+            title:"iPad-ac Pro (2nd generation)",
+            price:`${1049}`
+        },     
+           {
+            id:2,category:"iPad",
+            thumbnail:"https://www.apple.com/v/ipad-pro/al/images/overview/chip/performance_hero__cxya4f2p5euu_large.jpg",
+            title:"ipad-pro Pro (2nd generation)",
+            price:`${1349}`
+        },    
+            {category:"MacBook",
+            id:2,
+            thumbnail:"https://www.apple.com/v/macbook-pro-14-and-16/e/images/overview/camera/spatial_audio__dipr8iji32uu_large.jpg",
+            title:"macbook-pro-14",
+            price:`${1999}`
+        },
+        {category:"iPad",
+            id:2,
+            thumbnail:"https://www.apple.com/v/ipad-pro/al/images/overview/chip/performance_hero__cxya4f2p5euu_large.jpg",
+            title:"iPad 2 (2nd generation)",
+            price:`${2099}`
+        },
+        {
+            id:2,category:"Watch",
+            thumbnail:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQDY3ref_VW_34FR+watch-49-titanium-ultra_VW_34FR_WF_CO+watch-face-49-alpine-ultra_VW_34FR_WF_CO?wid=700&hei=700&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1660713659063%2C1660927566964%2C1660927563656",
+            title:"Watch Pro (2nd generation)",
+            price:`${799}`
+        },
+          {
+            "asin": "B07ZPJWGKZ",
+            "thumbnail":
+                  "https://images-na.ssl-images-amazon.com/images/I/51Shv2Qfg2L._AC_SX466_.jpg",
+                  
+            // "is_current_product": false,
+            "link": "https://www.amazon.com/dp/B07ZPJWGKZ/?th=1&psc=1",
+            "price": "549",category:"mobile",
+            "title": "Purple 128GB Fully Unlocked"
+          },
+          ];
+
+          let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
+          let cartcount=document.getElementById("cart-count");
+    let container=document.getElementById("container");
+    display(product);
+    
+    // console.log(variants[variants.length-1].thumbnail,variants[variants.length-1].title,variants[variants.length-1].price,);
+    // console.log(product[product.length-1].thumbnail,product[product.length-1].title,product[product.length-1].price);
+    function display(data){
+        container.innerHTML=null;
+        data.forEach(function (element, index){
+            let card=document.createElement("div");
+
+            let image=document.createElement("img");
+            image.setAttribute("src",element.thumbnail);
+
+            let title=document.createElement("h3");
+            title.textContent=element.title;
+
+            let category=document.createElement("h4");
+            category.textContent=`Category : ${element.category}`;
+            console.log(element.category);
+
+            let price=document.createElement("h2");
+            price.textContent=`$ ${element.price}`;
+
+            let tocart=document.createElement("button");
+            tocart.textContent="Add to cart";
+            tocart.id="delete"
+            tocart.addEventListener("click",function(){
+              if(repeat(element))
+              {
+                alert(`This Item is already present in your cart.`)
+              }else{
+              cart.push({...element,quantity:1});
+              localStorage.setItem("Add-to-cart",JSON.stringify(cart));
+              tocart.textContent="Already in Cart";
+              alert(`${element.title} is added to your cart.`)
+              // let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
+              }
+            });
+            cartcount.textContent=cart.length;
+
+            card.append(image,title,category,price,tocart);
+            container.append(card);
+        });
+        
+    }
+
+    function repeat(list)
+    {
+      for(let i=0; i<cart.length; i++)
+      {
+        // console.log(list.title);
+        if(cart[i].title===list.title)
+        {
+          return true;
+        }
+      }
+    }
+    //filter part.
+{
+    let sortselect=document.getElementById("sorting");
+    sortselect.addEventListener("change",function(){
+      // console.log(sortselect.value)
+      if(sortselect.value==="Low")
+      {
+      // console.log(sortselect.value);
+      let sorted=product.sort(function(a,b){
+        return a.price-b.price;
+      });
+      display(sorted)
+      }
+      if(sortselect.value==="High")
+      {
+      // console.log(sortselect.value);
+      let sorted=product.sort(function(a,b){
+        return b.price-a.price;
+      });
+      display(sorted)
+      }
+    })
+    
+    let filterselect=document.getElementById("filter");
+    filterselect.addEventListener("change",function(){
+      if(filterselect.value==="")
+      {
+        display(product);
+      }else
+          {
+          let filtered=product.filter(function (element,index){
+          if(element.price<Number(filterselect.value)&&Number(filterselect.value)<=300)
+          {
+            return element.price;
+          }
+          else if(element.price<Number(filterselect.value)&&element.price>300&&Number(filterselect.value)<=600)
+          {
+            return element.price;
+          }
+          else if(element.price<Number(filterselect.value)&&element.price>600&&Number(filterselect.value)<=900)
+          {
+            return element.price;
+          }
+          else if(element.price>Number(filterselect.value)&&Number(filterselect.value)==901)
+          {
+            return element.price
+          }
+        })
+        display(filtered);
+        console.log(filtered);
+      }
+      // console.log(element)
+    });
+  }
+    let categoryFilter=document.getElementById("categoryFilter");
+    categoryFilter.addEventListener("change",function(){
+      if(categoryFilter.value==="")
+      {
+        display(product);
+      }
+      else
+      {
+        let filterCategory=product.filter(function(element,index){
+          if(categoryFilter.value==element.category)
+          {
+            return true;
+          }
+          else{
+            return false;
+          }
+        })
+        display(filterCategory)
+      }
+    })
+
+</script>
+</html>
