@@ -24,7 +24,7 @@
             <h5>This is Online Electronics Retailer store.</h5>
             <img src="./Images/Logos/Black.png" alt="">
             <div>
-                <a href="./Signup.html"><h3>Click here to <span>Track your Order.<img src="./Images/Logos/Black.png" alt=""></span></h3></a>
+                <a href="./trackOrder.html"><h3>Click here to <span>Track your Order.<img src="./Images/Logos/Black.png" alt=""></span></h3></a>
             </div>
         </div>
         <form id="form">
@@ -90,14 +90,14 @@ let locationArray=[
   
         let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
         
-        console.log(cart);
+        // console.log(cart);
         
         
     form.addEventListener("submit",function(event){
         event.preventDefault();
-        cart=[];
-        localStorage.setItem("Add-to-cart",JSON.stringify(cart))
-        console.log(cart)
+        // cart=[];
+        
+        // console.log(cart)
         let i=34;
     
     let  j=0;
@@ -114,7 +114,8 @@ let locationArray=[
      {
          k=16;
      }
-        if(cart===[])
+     console.log(cart.length);
+        if(cart.length===0)
         {
             conform.textContent="Your Cart is Empty..."
         }
@@ -131,14 +132,18 @@ let locationArray=[
             Previous_location:locationArray[i-2],
             Current_location:locationArray[j+3],
             Next_location:locationArray[k+4],
+            buy_Item:cart[0].title,
         };
-        // console.log(orderData);
+        // console.log(cart,cart[i].title);
         trackOrder.push(orderData);
         localStorage.setItem("track-my-order",JSON.stringify(trackOrder));
     }
-        setTimeout(function(){
-        location.replace("./index.html");
-        },4000);
+    // console.log(cart);
+    cart=null;
+    localStorage.setItem("Add-to-cart",JSON.stringify(cart))
+        // setTimeout(function(){
+        // location.replace("./index.html");
+        // },4000);
 
     });
 </script>
