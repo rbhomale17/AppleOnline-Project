@@ -11,20 +11,22 @@
     <div id="navbar">
         <a href="./Index.html"><img src="./Images/1.NavBar/Apple-Logo.png"  alt="" ></a>
         <a href="./1.Store.html">Store</a>
-        <a href="./2.Mac.html">Mac</a>
-        <a href="./3.iPad.html">iPad</a>
-        <a href="./4.iPhone.html">iPhone</a>
-        <a href="./5.Watch.html">Watch</a>
-        <a href="./6.AirPods.html">AirPods</a>
-        <a href="./7.TV_&_Home.html">TV & Home</a>
-        <a href="./8.Entertainment.html">Entertainment</a>
-        <a href="./9.Accessories.html">Accessories</a>
-        <a href="./10.Support.html">Support</a>
+        <a href="">Mac</a>
+        <a href="">iPad</a>
+        <a href="./iphone.html">iPhone</a>
+        <a href="">Watch</a>
+        <a href="">AirPods</a>
+        <a href="">TV & Home</a>
+        <a href="">Entertainment</a>
+        <a href="">Accessories</a>
+        <a href="">Support</a>
         <a href="./Signup.html">Log in / Sign up</a>
     </div>
     <div id="cart">
         <h2 id="quantity">Cart Total Quantity is : <span>0</span></h2>
         <h2 id="Checkout"><a href="./checkout.html"><button>Place Order</button></a></h2>
+        <input type="text" placeholder="AppleOnline35" id="code">
+        <button id="codebutton">Add Coupon</button>
         <h2 id="value">Total Cart Value: <span>0</span></h2>
     </div>
     <div id="container">
@@ -42,12 +44,6 @@ let container=document.getElementById("container");
         container.innerHTML=null;
         for(let i=0; i<data.length; i++)
         {
-            // let sum=0;
-            // // for(let i=0; i<cart.length;i++)
-            // // {
-            //     sum=0;
-
-            //     console.log((data[i].price));
             let card=document.createElement("div");
 
             let image=document.createElement("img");
@@ -127,5 +123,20 @@ let container=document.getElementById("container");
             container.append(card);
         }
     }
+    let code=document.getElementById("code");
+    let codebutton=document.getElementById("codebutton");
+
+    codebutton.addEventListener("click",function(){
+        if(code.value==="AppleOnline35")
+        {
+            let sum=0;
+            for(let i=0; i<cart.length; i++)
+            {
+                sum+=Number(cart[i].quantity*cart[i].price);
+                console.log(sum);
+            }
+            cartValue.textContent=`$ ${Math.floor(sum*0.65)}`
+        }
+    })
 </script>
 </html>

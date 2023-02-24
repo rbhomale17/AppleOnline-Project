@@ -39,7 +39,7 @@ background: transparent;
           display: grid;
           grid-template-columns: repeat(4,1fr);
           gap: 40px 30px;
-          background-color: #F1F8E9
+          background-color: #f0f5f6
       }
       a{
           text-decoration: none;
@@ -50,6 +50,7 @@ background: transparent;
           background-color: #E0F7FA;
           /* height: 100%; */
           border-radius: 30px;
+          background-image: linear-gradient(to right,#9bd1d8,#97e1bd );
       }
       #container img{
           width: 100%;
@@ -65,11 +66,13 @@ background: transparent;
           border: none;
           border-radius: 40px;
           background-color:#F8BBD0;
+          background-image: linear-gradient(to right,#ecbfcf,#d5bbf8 );
       }
       #delete:hover{
         cursor: pointer;
         background-color:gold;
         display:inherit;
+        background-image: linear-gradient(to right,#eefc94,#edd8b9 );
       }
       #modify{
         width: 95%;
@@ -82,6 +85,7 @@ background: transparent;
         align-items: center;
         padding: 20px;
         margin-top: 20px;
+        background-image: linear-gradient(to right, #a4ed8e, #4986d1);
         /* font-size: 40px; */
       }
       #sorting ,#filter,#categoryFilter{
@@ -89,6 +93,7 @@ background: transparent;
         padding: 10px;
         font-size: 20px;
         background-color: #F1F8E9;
+        background-image: linear-gradient(to right, #e299da, #91e8f0)
       }
       @media only screen and (max-width:650px) {
         #modify{
@@ -147,10 +152,10 @@ background: transparent;
         }
       }
 
-      @media only screen and (min-width:651px) and (max-width:850px) {
+      @media only screen and (min-width:651px) and (max-width:1000px) {
         #modify{
             flex-direction: column;
-            height: 140px;
+            height: 240px;
             align-content: space-between;
         }
         #container{

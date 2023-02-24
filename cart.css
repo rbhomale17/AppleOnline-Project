@@ -35,7 +35,7 @@ background: transparent;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 70px 30px;
-    background-color: #F3E5F5;
+    background-color: #f0f5f6;
 }
 a{
     text-decoration: none;
@@ -46,6 +46,7 @@ a{
     background-color: #E0F7FA;
     height: 670px;
     border-radius: 30px;
+    background-image: linear-gradient(to right,#9bd1d8,#97e1bd );
 }
 #container>div img{
     width: 100%;
@@ -56,13 +57,13 @@ a{
     /* background-color: aqua; */
     /* padding: 7px; */
     font-size: 20px;
-    background-color:greenyellow ;
+    background-color:rgb(205, 224, 177) ;
 }
 #dnc{
     margin: 5px;
     /* padding: 7px; */
     font-size: 20px;
-    background-color:greenyellow
+    background-color:#cbd7b9
 }
 
 #delete{
@@ -84,6 +85,16 @@ a{
     padding-left: 70px;
     padding-right: 70px;
     height: 80px;
+}
+#code,#codebutton{
+    align-items: center;
+    height: 40px;
+    padding: 10px;
+    width: 150px;
+    padding: 10px;
+    width: 150px;
+    font-size: large;
+    margin-top: 20px;
 }
 #Checkout>a>button{
     padding: 10px;
@@ -112,7 +123,7 @@ a{
 @media only screen and (max-width:650px){
     #cart{
         flex-direction: column;
-        height: 145px;
+        height: 320px;
         align-items: center;
         margin-top: 20px;
         align-content: center;
@@ -175,7 +186,7 @@ a{
 @media only screen and (min-width:650px) and (max-width:900px){
     #cart{
         flex-direction: column;
-        height: 145px;
+        height: 345px;
         align-items: center;
         margin-top: 20px;
         align-content: center;
