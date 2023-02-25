@@ -384,7 +384,7 @@ background-color: white
     }
     #navbar{
         flex-direction: column;
-        height: 50px;
+        height: 70px;
     }
     #navbar>a:nth-child(2){
         display: none;
@@ -421,8 +421,12 @@ background-color: white
     }
     #navbar>a:nth-child(12){
         display: none;
-    }
+    } 
     #navbar>a:nth-child(14){
+        display: none;
+    }
+
+    #navbar>a:nth-child(15){
         display: none;
     }
     #navbar>#cart-count{
@@ -470,7 +474,7 @@ background-color: white
     }
     #navbar{
         flex-direction: column;
-        height: 50px;
+        height: 70px;
     }
     #navbar>a:nth-child(2){
         display: none;
@@ -509,6 +513,9 @@ background-color: white
         display: none;
     }
     #navbar>a:nth-child(14){
+        display: none;
+    }
+    #navbar>a:nth-child(15){
         display: none;
     }
     #navbar>#cart-count{

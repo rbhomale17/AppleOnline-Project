@@ -11,9 +11,24 @@
             text-align: center;
             
         }
+        
     </style>
 </head>
 <body>
+    <div id="navbar">
+        <a href="./index.html"><img src="./Images/Logos/Black.png"  alt="" ></a>
+        <a href="./1.Store.html">Store</a>
+        <a href="./mac.html">Mac</a>
+        <a href="./iPad.html">iPad</a>
+        <a href="./iphone.html">iPhone</a>
+        <a href="./watch.html">Watch</a>
+        <a href="./Airpod.html">AirPods</a>
+        <a href="./tv&home.html">TV & Home</a>
+        <a href="">Entertainment</a>
+        <a href="./assc.html">Accessories</a>
+        <a href="">Support</a>
+        <a href="./allproduct.html">All Products</a>        
+    </div>
     <div id="conform">
         <h2></h2>
     </div>
@@ -29,7 +44,7 @@
         </div>
         <form id="form">
             <h2>Checkout Products.</h2>
-            <p>**Get 30% cashback on Card Payment**</p>
+            <p>**Get 35% off on your first Payment on AppleOnline.com**</p>
             <input type="text" required placeholder="Enter Name" id="name">
             <input type="number" required placeholder="Enter Mobile" id="mobile">            
             <input type="text" required placeholder="Enter Address" id="address">
@@ -141,9 +156,9 @@ let locationArray=[
     // console.log(cart);
     cart=null;
     localStorage.setItem("Add-to-cart",JSON.stringify(cart))
-        // setTimeout(function(){
-        // location.replace("./index.html");
-        // },4000);
+        setTimeout(function(){
+        location.replace("./index.html");
+        },4000);
 
     });
 </script>

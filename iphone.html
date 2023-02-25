@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
+    <title>AppleOnline.com/iPhone</title>
     <link rel="stylesheet" href="iphone.css">
 </head>
 <body>
   <div id="navbar">
     <a href="./Index.html"><img src="./Images/1.NavBar/Apple-Logo.png"  alt="" ></a>
     <a href="./1.Store.html">Store</a>
-    <a href="">Mac</a>
-    <a href="">iPad</a>
+    <a href="./mac.html">Mac</a>
+    <a href="./iPad.html">iPad</a>
     <a href="./iphone.html">iPhone</a>
-    <a href="">Watch</a>
-    <a href="">AirPods</a>
-    <a href="">TV & Home</a>
+    <a href="./watch.html">Watch</a>
+    <a href="./Airpod.html">AirPods</a>
+    <a href="./tv&home.html">TV & Home</a>
     <a href="">Entertainment</a>
-    <a href="">Accessories</a>
+    <a href="./assc.html">Accessories</a>
     <a href="">Support</a>
+    <a href="./allproduct.html">All Products</a>
     <a style="font-size: 20px;" href="./cart.html">Cart / Bag:-</a>
         <h2 id="cart-count">0</h2>
     <a href="./Signup.html">Log in / Sign up</a>
@@ -34,14 +35,14 @@
   </div>
   <div id="filterCategory">
     <select name="filter category" id="categoryFilter">
-      <option value="">Select Category of Product</option>
-      <option value="mobile">Mobile</option>
-      <option value="MacBook">MacBook</option>
+      <!-- <option value="">Select Category of Product</option> -->
+      <option value="mobile">Mobile / iPhone</option>
+      <!-- <option value="MacBook">MacBook</option>
       <option value="Watch">Watch</option>
       <option value="AirPod">AirPod</option>
       <option value="assc">Accessories</option>
       <option value="HomePod">HomePod</option>
-      <option value="Adapter">Charging Adapter</option>
+      <option value="Adapter">Charging Adapter</option> -->
     </select>
   </div>
   <div id="filterPrice">
@@ -353,13 +354,13 @@
             id:4,
             thumbnail:"./Images/store/assc.5.jpg",
             title:"Smart Folio for iPad (10th generation) - Lemonade",
-            price:`${129}`
+            price:`${629}`
         },
         {category:"assc",
             id:5,
             thumbnail:"./Images/store/assc.6.jpg",
             title:"iPhone 14 Pro Leather Case with MagSafe - Ink",
-            price:`${159}`
+            price:`${959}`
         },
         {category:"assc",
             id:6,
@@ -394,7 +395,7 @@
             id:2,
             thumbnail:"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MQE23ref_VW_34FR+watch-49-titanium-ultra_VW_34FR_WF_CO+watch-face-49-alpine-ultra_VW_34FR_WF_CO?wid=700&hei=700&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1660713657930%2C1660927566964%2C1660927563656",
             title:"45mm grey Unity Sport Loop",
-            price:`${649}`
+            price:`${949}`
         },      
         {category:"Watch",
             id:3,
@@ -844,13 +845,13 @@
             id:2,
             thumbnail:"https://www.apple.com/v/macbook-air-m1/d/images/overview/hero_endframe__ea0qze85eyi6_large_2x.jpg",
             title:"macbook-air-m1",
-            price:`${2249}`
+            price:`${749}`
         },        
         {category:"MacBook",
             id:2,
             thumbnail:"https://www.apple.com/v/macbook-air-m2/e/images/overview/design/design_top__fpzme7txr3ee_large.jpg",
             title:"Macbook-air-m2 (2nd generation)",
-            price:`${2549}`
+            price:`${549}`
         },        
         {category:"MacBook",
             id:2,
@@ -920,19 +921,19 @@
             id:2,
             thumbnail:"https://www.apple.com/v/ipad-10.9/b/images/overview/hero/hero__ecv967jz1y82_large.jpg",
             title:"ipad Pro (2nd generation)",
-            price:`${949}`
+            price:`${249}`
         },       
          {
             id:2,category:"iPad",
             thumbnail:"https://www.apple.com/v/ipad-10.9/b/images/overview/ipad-accessories/folio_endframe__e5n229k0kay6_large.jpg",
             title:"iPad-ac Pro (2nd generation)",
-            price:`${1049}`
+            price:`${749}`
         },     
            {
             id:2,category:"iPad",
             thumbnail:"https://www.apple.com/v/ipad-pro/al/images/overview/chip/performance_hero__cxya4f2p5euu_large.jpg",
             title:"ipad-pro Pro (2nd generation)",
-            price:`${1349}`
+            price:`${949}`
         },    
             {category:"MacBook",
             id:2,
@@ -944,7 +945,7 @@
             id:2,
             thumbnail:"https://www.apple.com/v/ipad-pro/al/images/overview/chip/performance_hero__cxya4f2p5euu_large.jpg",
             title:"iPad 2 (2nd generation)",
-            price:`${2099}`
+            price:`${599}`
         },
         {
             id:2,category:"Watch",
@@ -964,6 +965,14 @@
           },
           ];
 
+          let products=[]
+          for(let i=0; i<product.length; i++)
+          {
+            products.push(product[i]);
+            localStorage.setItem("productArray",JSON.stringify(products));
+          }
+          // console.log(products);
+          
           let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
           let cartcount=document.getElementById("cart-count");
     let container=document.getElementById("container");
@@ -974,6 +983,7 @@
     function display(data){
         container.innerHTML=null;
         data.forEach(function (element, index){
+          if(element.category==="mobile"){
             let card=document.createElement("div");
 
             let image=document.createElement("img");
@@ -984,7 +994,7 @@
 
             let category=document.createElement("h4");
             category.textContent=`Category : ${element.category}`;
-            console.log(element.category);
+            // console.log(element.category);
 
             let price=document.createElement("h2");
             price.textContent=`$ ${element.price}`;
@@ -1008,6 +1018,7 @@
 
             card.append(image,title,category,price,tocart);
             container.append(card);
+          }
         });
         
     }

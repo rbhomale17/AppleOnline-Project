@@ -1,6 +1,37 @@
 body{
     background-color: #FFEBEE;
 }
+#navbar{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    font-size: 14px;
+    height: 44px;
+    align-items: center;
+    opacity: 0.8;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    }
+    /* #navbar>div>a{
+    width: 100%;
+    justify-content: space-between;
+    font-size: 20px;
+    } */
+    #navbar>img{
+    width: 70px;
+    }
+    #navbar a{
+    color: black;
+    }
+    #navbar>a:hover{
+    color: lightgreen;
+    opacity: 1;
+    }
+    #navbar>a>img{
+    width: 45px;
+    background: transparent;
+    }
 form {
 width: 50%;
 border: 1px solid rgb(230, 230, 230);
