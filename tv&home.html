@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppleOnline.com/TV & Home</title>
+    <link rel="stylesheet" href="iphone.css">
+</head>
+<body>
+  <div id="navbar">
+    <a href="./Index.html"><img src="./Images/1.NavBar/Apple-Logo.png"  alt="" ></a>
+    <a href="./1.Store.html">Store</a>
+    <a href="./mac.html">Mac</a>
+    <a href="./iPad.html">iPad</a>
+    <a href="./iphone.html">iPhone</a>
+    <a href="./watch.html">Watch</a>
+    <a href="./Airpod.html">AirPods</a>
+    <a href="./tv&home.html">TV & Home</a>
+    <a href="">Entertainment</a>
+    <a href="./assc.html">Accessories</a>
+    <a href="">Support</a>
+    <a href="./allproduct.html">All Products</a>
+    <a style="font-size: 20px;" href="./cart.html">Cart / Bag:-</a>
+        <h2 id="cart-count">0</h2>
+    <a href="./Signup.html">Log in / Sign up</a>
+</div>
+<div id="modify">
+  <div id="sort">
+    <select name="sorting" id="sorting">
+      <option value="">Select price</option>
+      <option value="High">High to Low</option>
+      <option value="Low">Low to High</option>
+    </select>
+  </div>
+  <div id="filterCategory">
+    <select name="filter category" id="categoryFilter">
+      <!-- <option value="">Select Category of Product</option>
+      <option value="mobile">Mobile</option> -->
+      <!-- <option value="MacBook">iPad</option>
+       <option value="Watch">Watch</option>
+       <option value="AirPod">AirPod</option>   
+      <option value="assc">Accessories</option> -->
+      <option value="HomePod">HomePod</option>
+      <!-- <option value="Adapter">Charging Adapter</option> -->
+    </select>
+  </div>
+  <div id="filterPrice">
+    <select name="filter" id="filter">
+      <option value="">Select Price Range</option>
+      <option value="300">upto $300</option>
+      <option value="600">Between $301--$600</option>
+      <option value="900">Between $601--$900</option>
+      <option value="901">More than $900</option>
+    </select>
+  </div>
+</div>
+    <div id="container">
+        <!-- append data here -->
+    </div>
+</body>
+<script>
+   let product=JSON.parse(localStorage.getItem("productArray"));
+    console.log(product);
+          let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
+          let cartcount=document.getElementById("cart-count");
+    let container=document.getElementById("container");
+    display(product);
+    
+    // console.log(variants[variants.length-1].thumbnail,variants[variants.length-1].title,variants[variants.length-1].price,);
+    // console.log(product[product.length-1].thumbnail,product[product.length-1].title,product[product.length-1].price);
+    function display(data){
+        container.innerHTML=null;
+        data.forEach(function (element, index){
+            if(element.category=="HomePod"){
+            let card=document.createElement("div");
+
+            let image=document.createElement("img");
+            image.setAttribute("src",element.thumbnail);
+
+            let title=document.createElement("h3");
+            title.textContent=element.title;
+
+            let category=document.createElement("h4");
+            category.textContent=`Category : ${element.category}`;
+            // console.log(element.category);
+
+            let price=document.createElement("h2");
+            price.textContent=`$ ${element.price}`;
+
+            let tocart=document.createElement("button");
+            tocart.textContent="Add to cart";
+            tocart.id="delete"
+            tocart.addEventListener("click",function(){
+              if(repeat(element))
+              {
+                alert(`This Item is already present in your cart.`)
+              }else{
+              cart.push({...element,quantity:1});
+              localStorage.setItem("Add-to-cart",JSON.stringify(cart));
+              tocart.textContent="Already in Cart";
+              alert(`${element.title} is added to your cart.`)
+              // let cart=JSON.parse(localStorage.getItem("Add-to-cart"))||[];
+              }
+            });
+            cartcount.textContent=cart.length;
+
+            card.append(image,title,category,price,tocart);
+            container.append(card);
+        }
+        });
+        
+    }
+
+    function repeat(list)
+    {
+      for(let i=0; i<cart.length; i++)
+      {
+        // console.log(list.title);
+        if(cart[i].title===list.title)
+        {
+          return true;
+        }
+      }
+    }
+    //filter part.
+{
+    let sortselect=document.getElementById("sorting");
+    sortselect.addEventListener("change",function(){
+      // console.log(sortselect.value)
+      if(sortselect.value==="Low")
+      {
+      // console.log(sortselect.value);
+      let sorted=product.sort(function(a,b){
+        return a.price-b.price;
+      });
+      display(sorted)
+      }
+      if(sortselect.value==="High")
+      {
+      // console.log(sortselect.value);
+      let sorted=product.sort(function(a,b){
+        return b.price-a.price;
+      });
+      display(sorted)
+      }
+    })
+    
+    let filterselect=document.getElementById("filter");
+    filterselect.addEventListener("change",function(){
+      if(filterselect.value==="")
+      {
+        display(product);
+      }else
+          {
+          let filtered=product.filter(function (element,index){
+          if(element.price<Number(filterselect.value)&&Number(filterselect.value)<=300)
+          {
+            return element.price;
+          }
+          else if(element.price<Number(filterselect.value)&&element.price>300&&Number(filterselect.value)<=600)
+          {
+            return element.price;
+          }
+          else if(element.price<Number(filterselect.value)&&element.price>600&&Number(filterselect.value)<=900)
+          {
+            return element.price;
+          }
+          else if(element.price>Number(filterselect.value)&&Number(filterselect.value)==901)
+          {
+            return element.price
+          }
+        })
+        display(filtered);
+        console.log(filtered);
+      }
+      // console.log(element)
+    });
+  }
+  
+    // let categoryFilter=document.getElementById("categoryFilter");
+    // categoryFilter.addEventListener("change",function(){
+    //   if(categoryFilter.value==="")
+    //   {
+    //     display(product);
+    //   }
+    //   else
+    //   {
+    //     let filterCategory=product.filter(function(element,index){
+    //       if(categoryFilter.value==element.category)
+    //       {
+    //         return true;
+    //       }
+    //       else{
+    //         return false;
+    //       }
+    //     })
+    //     display(filterCategory)
+    //   }
+    // })
+
+</script>
+</html>

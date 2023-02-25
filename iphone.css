@@ -106,7 +106,7 @@ background: transparent;
         }
         #navbar{
             flex-direction: column;
-            height: 70px;
+            height: 90px;
         }
         #navbar>a:nth-child(2){
             display: none;
@@ -144,7 +144,13 @@ background: transparent;
         /* #navbar>a:nth-child(12){
             display: none;
         } */
-        #navbar>a:nth-child(14){
+        #navbar>a:nth-child(12){
+            display: none;
+        }
+        /* #navbar>a:nth-child(13){
+            display: none;
+        } */
+        #navbar>a:nth-child(15){
             display: none;
         }
         #navbar>#cart-count{
@@ -163,7 +169,7 @@ background: transparent;
         }
         #navbar{
             flex-direction: column;
-            height: 50px;
+            height: 90px;
         }
         #navbar>a:nth-child(2){
             display: none;
@@ -201,7 +207,13 @@ background: transparent;
         #navbar>a:nth-child(12){
             display: none;
         }
-        #navbar>a:nth-child(14){
+        #navbar>a:nth-child(12){
+            display: none;
+        }
+        /* #navbar>a:nth-child(13){
+            display: none;
+        } */
+        #navbar>a:nth-child(15){
             display: none;
         }
         #navbar>#cart-count{
