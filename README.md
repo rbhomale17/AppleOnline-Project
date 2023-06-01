@@ -21,3 +21,5 @@ Then clicking on the any option present on navbar you will redierected that cate
 In the Cart page you can find the products you added. I have provided a functionality to remove the products from the cartpage, You can see total Number of Products present in your cart on upper-left side of cart page & also you can see total price of products present in your cart. You can increase the number of item count or decrease the count by given "+" & "-" button below product quantity in cart. In the further page you just have to add the details like in Checkout page you have to add your delivery address and click on the submit t will show if your order is placed or not. If your cart is Empty and you try to checkout on submit of details it will show you "Your Cart is Empty". After 5 seconds it will redirect you the homepage i.e Index Page. 
 
 If you want to see your product details and want to track your order with it location you have to just visit checkout page there is option "Track your order." on that track order you can search your order by your Name, Pin Code, item name, and Mobile Number.
+
+Thank You...
