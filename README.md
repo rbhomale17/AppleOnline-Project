@@ -1,4 +1,4 @@
-# WEB101 - Construct Week Project For Unit-2 WEB101.
+# WEB101 - Construct Week Project For Unit-2 WEB101
 
 # Project Code:-  momentous-shoes-5965
 
